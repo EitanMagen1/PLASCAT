@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409401C5A4B570045BCFB /* AppDelegate.swift */; };
+		460409431C5A4B570045BCFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409421C5A4B570045BCFB /* ViewController.swift */; };
+		460409461C5A4B570045BCFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409441C5A4B570045BCFB /* Main.storyboard */; };
+		460409481C5A4B570045BCFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460409471C5A4B570045BCFB /* Assets.xcassets */; };
+		4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409491C5A4B570045BCFB /* LaunchScreen.storyboard */; };
+		460409561C5A4B570045BCFB /* PLASCATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409551C5A4B570045BCFB /* PLASCATTests.swift */; };
+		460409611C5A4B570045BCFB /* PLASCATUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409601C5A4B570045BCFB /* PLASCATUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		460409521C5A4B570045BCFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 460409351C5A4B570045BCFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4604093C1C5A4B570045BCFB;
+			remoteInfo = PLASCAT;
+		};
+		4604095D1C5A4B570045BCFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 460409351C5A4B570045BCFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4604093C1C5A4B570045BCFB;
+			remoteInfo = PLASCAT;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4604093D1C5A4B570045BCFB /* PLASCAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLASCAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		460409401C5A4B570045BCFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		460409421C5A4B570045BCFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		460409451C5A4B570045BCFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		460409471C5A4B570045BCFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4604094A1C5A4B570045BCFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4604094C1C5A4B570045BCFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		460409511C5A4B570045BCFB /* PLASCATTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLASCATTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		460409551C5A4B570045BCFB /* PLASCATTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLASCATTests.swift; sourceTree = "<group>"; };
+		460409571C5A4B570045BCFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4604095C1C5A4B570045BCFB /* PLASCATUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLASCATUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		460409601C5A4B570045BCFB /* PLASCATUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLASCATUITests.swift; sourceTree = "<group>"; };
+		460409621C5A4B570045BCFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4604093A1C5A4B570045BCFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4604094E1C5A4B570045BCFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		460409591C5A4B570045BCFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		460409341C5A4B570045BCFB = {
+			isa = PBXGroup;
+			children = (
+				4604093F1C5A4B570045BCFB /* PLASCAT */,
+				460409541C5A4B570045BCFB /* PLASCATTests */,
+				4604095F1C5A4B570045BCFB /* PLASCATUITests */,
+				4604093E1C5A4B570045BCFB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4604093E1C5A4B570045BCFB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4604093D1C5A4B570045BCFB /* PLASCAT.app */,
+				460409511C5A4B570045BCFB /* PLASCATTests.xctest */,
+				4604095C1C5A4B570045BCFB /* PLASCATUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4604093F1C5A4B570045BCFB /* PLASCAT */ = {
+			isa = PBXGroup;
+			children = (
+				460409401C5A4B570045BCFB /* AppDelegate.swift */,
+				460409421C5A4B570045BCFB /* ViewController.swift */,
+				460409441C5A4B570045BCFB /* Main.storyboard */,
+				460409471C5A4B570045BCFB /* Assets.xcassets */,
+				460409491C5A4B570045BCFB /* LaunchScreen.storyboard */,
+				4604094C1C5A4B570045BCFB /* Info.plist */,
+			);
+			path = PLASCAT;
+			sourceTree = "<group>";
+		};
+		460409541C5A4B570045BCFB /* PLASCATTests */ = {
+			isa = PBXGroup;
+			children = (
+				460409551C5A4B570045BCFB /* PLASCATTests.swift */,
+				460409571C5A4B570045BCFB /* Info.plist */,
+			);
+			path = PLASCATTests;
+			sourceTree = "<group>";
+		};
+		4604095F1C5A4B570045BCFB /* PLASCATUITests */ = {
+			isa = PBXGroup;
+			children = (
+				460409601C5A4B570045BCFB /* PLASCATUITests.swift */,
+				460409621C5A4B570045BCFB /* Info.plist */,
+			);
+			path = PLASCATUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4604093C1C5A4B570045BCFB /* PLASCAT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 460409651C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCAT" */;
+			buildPhases = (
+				460409391C5A4B570045BCFB /* Sources */,
+				4604093A1C5A4B570045BCFB /* Frameworks */,
+				4604093B1C5A4B570045BCFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PLASCAT;
+			productName = PLASCAT;
+			productReference = 4604093D1C5A4B570045BCFB /* PLASCAT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		460409501C5A4B570045BCFB /* PLASCATTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 460409681C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCATTests" */;
+			buildPhases = (
+				4604094D1C5A4B570045BCFB /* Sources */,
+				4604094E1C5A4B570045BCFB /* Frameworks */,
+				4604094F1C5A4B570045BCFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				460409531C5A4B570045BCFB /* PBXTargetDependency */,
+			);
+			name = PLASCATTests;
+			productName = PLASCATTests;
+			productReference = 460409511C5A4B570045BCFB /* PLASCATTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4604095B1C5A4B570045BCFB /* PLASCATUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4604096B1C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCATUITests" */;
+			buildPhases = (
+				460409581C5A4B570045BCFB /* Sources */,
+				460409591C5A4B570045BCFB /* Frameworks */,
+				4604095A1C5A4B570045BCFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4604095E1C5A4B570045BCFB /* PBXTargetDependency */,
+			);
+			name = PLASCATUITests;
+			productName = PLASCATUITests;
+			productReference = 4604095C1C5A4B570045BCFB /* PLASCATUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		460409351C5A4B570045BCFB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Eitan_Magen;
+				TargetAttributes = {
+					4604093C1C5A4B570045BCFB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6DX4JR9R3P;
+					};
+					460409501C5A4B570045BCFB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6DX4JR9R3P;
+						TestTargetID = 4604093C1C5A4B570045BCFB;
+					};
+					4604095B1C5A4B570045BCFB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 6DX4JR9R3P;
+						TestTargetID = 4604093C1C5A4B570045BCFB;
+					};
+				};
+			};
+			buildConfigurationList = 460409381C5A4B570045BCFB /* Build configuration list for PBXProject "PLASCAT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 460409341C5A4B570045BCFB;
+			productRefGroup = 4604093E1C5A4B570045BCFB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4604093C1C5A4B570045BCFB /* PLASCAT */,
+				460409501C5A4B570045BCFB /* PLASCATTests */,
+				4604095B1C5A4B570045BCFB /* PLASCATUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4604093B1C5A4B570045BCFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */,
+				460409481C5A4B570045BCFB /* Assets.xcassets in Resources */,
+				460409461C5A4B570045BCFB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4604094F1C5A4B570045BCFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4604095A1C5A4B570045BCFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		460409391C5A4B570045BCFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				460409431C5A4B570045BCFB /* ViewController.swift in Sources */,
+				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4604094D1C5A4B570045BCFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				460409561C5A4B570045BCFB /* PLASCATTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		460409581C5A4B570045BCFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				460409611C5A4B570045BCFB /* PLASCATUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		460409531C5A4B570045BCFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4604093C1C5A4B570045BCFB /* PLASCAT */;
+			targetProxy = 460409521C5A4B570045BCFB /* PBXContainerItemProxy */;
+		};
+		4604095E1C5A4B570045BCFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4604093C1C5A4B570045BCFB /* PLASCAT */;
+			targetProxy = 4604095D1C5A4B570045BCFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		460409441C5A4B570045BCFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				460409451C5A4B570045BCFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		460409491C5A4B570045BCFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4604094A1C5A4B570045BCFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		460409631C5A4B570045BCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		460409641C5A4B570045BCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		460409661C5A4B570045BCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PLASCAT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PLASCAT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		460409671C5A4B570045BCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PLASCAT/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PLASCAT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		460409691C5A4B570045BCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PLASCATTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PLASCATTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PLASCAT.app/PLASCAT";
+			};
+			name = Debug;
+		};
+		4604096A1C5A4B570045BCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PLASCATTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PLASCATTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PLASCAT.app/PLASCAT";
+			};
+			name = Release;
+		};
+		4604096C1C5A4B570045BCFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PLASCATUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PLASCATUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PLASCAT;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		4604096D1C5A4B570045BCFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PLASCATUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.udacity.PLASCATUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PLASCAT;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		460409381C5A4B570045BCFB /* Build configuration list for PBXProject "PLASCAT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				460409631C5A4B570045BCFB /* Debug */,
+				460409641C5A4B570045BCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		460409651C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCAT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				460409661C5A4B570045BCFB /* Debug */,
+				460409671C5A4B570045BCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		460409681C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCATTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				460409691C5A4B570045BCFB /* Debug */,
+				4604096A1C5A4B570045BCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4604096B1C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCATUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4604096C1C5A4B570045BCFB /* Debug */,
+				4604096D1C5A4B570045BCFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 460409351C5A4B570045BCFB /* Project object */;
+}
