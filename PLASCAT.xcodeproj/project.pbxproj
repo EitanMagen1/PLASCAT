@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409401C5A4B570045BCFB /* AppDelegate.swift */; };
-		460409431C5A4B570045BCFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409421C5A4B570045BCFB /* ViewController.swift */; };
+		460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409421C5A4B570045BCFB /* SearchViewController.swift */; };
 		460409461C5A4B570045BCFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409441C5A4B570045BCFB /* Main.storyboard */; };
 		460409481C5A4B570045BCFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460409471C5A4B570045BCFB /* Assets.xcassets */; };
 		4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409491C5A4B570045BCFB /* LaunchScreen.storyboard */; };
 		460409561C5A4B570045BCFB /* PLASCATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409551C5A4B570045BCFB /* PLASCATTests.swift */; };
 		460409611C5A4B570045BCFB /* PLASCATUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409601C5A4B570045BCFB /* PLASCATUITests.swift */; };
+		4604096F1C5E357B0045BCFB /* PLS_LUL.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4604096E1C5E357B0045BCFB /* PLS_LUL.csv */; };
+		460409711C5E35830045BCFB /* PLS_LUL_BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */; };
+		460409741C5F52640045BCFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409731C5F52640045BCFB /* ItemViewController.swift */; };
+		460409761C5FA0870045BCFB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409751C5FA0870045BCFB /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +40,7 @@
 /* Begin PBXFileReference section */
 		4604093D1C5A4B570045BCFB /* PLASCAT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PLASCAT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		460409401C5A4B570045BCFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		460409421C5A4B570045BCFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		460409421C5A4B570045BCFB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		460409451C5A4B570045BCFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		460409471C5A4B570045BCFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4604094A1C5A4B570045BCFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,10 @@
 		4604095C1C5A4B570045BCFB /* PLASCATUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLASCATUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		460409601C5A4B570045BCFB /* PLASCATUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLASCATUITests.swift; sourceTree = "<group>"; };
 		460409621C5A4B570045BCFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4604096E1C5E357B0045BCFB /* PLS_LUL.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL.csv; sourceTree = "<group>"; };
+		460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL_BOM.csv; sourceTree = "<group>"; };
+		460409731C5F52640045BCFB /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		460409751C5FA0870045BCFB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +105,14 @@
 		4604093F1C5A4B570045BCFB /* PLASCAT */ = {
 			isa = PBXGroup;
 			children = (
+				460409771C5FA0960045BCFB /* Data Base */,
 				460409401C5A4B570045BCFB /* AppDelegate.swift */,
-				460409421C5A4B570045BCFB /* ViewController.swift */,
+				460409421C5A4B570045BCFB /* SearchViewController.swift */,
+				460409731C5F52640045BCFB /* ItemViewController.swift */,
 				460409441C5A4B570045BCFB /* Main.storyboard */,
 				460409471C5A4B570045BCFB /* Assets.xcassets */,
 				460409491C5A4B570045BCFB /* LaunchScreen.storyboard */,
-				4604094C1C5A4B570045BCFB /* Info.plist */,
+				460409721C5E358B0045BCFB /* Supporting Files */,
 			);
 			path = PLASCAT;
 			sourceTree = "<group>";
@@ -123,6 +133,24 @@
 				460409621C5A4B570045BCFB /* Info.plist */,
 			);
 			path = PLASCATUITests;
+			sourceTree = "<group>";
+		};
+		460409721C5E358B0045BCFB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4604096E1C5E357B0045BCFB /* PLS_LUL.csv */,
+				460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */,
+				4604094C1C5A4B570045BCFB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		460409771C5FA0960045BCFB /* Data Base */ = {
+			isa = PBXGroup;
+			children = (
+				460409751C5FA0870045BCFB /* Data.swift */,
+			);
+			name = "Data Base";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +260,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460409711C5E35830045BCFB /* PLS_LUL_BOM.csv in Resources */,
+				4604096F1C5E357B0045BCFB /* PLS_LUL.csv in Resources */,
 				4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */,
 				460409481C5A4B570045BCFB /* Assets.xcassets in Resources */,
 				460409461C5A4B570045BCFB /* Main.storyboard in Resources */,
@@ -259,8 +289,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460409431C5A4B570045BCFB /* ViewController.swift in Sources */,
+				460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */,
 				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
+				460409741C5F52640045BCFB /* ItemViewController.swift in Sources */,
+				460409761C5FA0870045BCFB /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

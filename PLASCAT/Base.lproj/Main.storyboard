@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <searchDisplayController id="ZlP-th-qet">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Xvf-S9-ZE4"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="3d1-zf-1D9"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="dj4-Px-Bpf"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="39a-mp-h04"/>
+                    </connections>
+                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="PLASCAT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +26,103 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-RJ-WPh">
+                                <rect key="frame" x="226" y="92" width="361" height="29"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="Part Number"/>
+                                    <segment title="Assembly"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" text="" prompt="PlassCat By Eitan Magen" placeholder="search Plasson Catalog Data base" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
+                                <rect key="frame" x="0.0" y="17" width="600" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="tqs-kW-oH6"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tqs-kW-oH6"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="91R-sB-Xc6"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0V0-xf-j6f">
+                                <rect key="frame" x="62" y="17" width="49" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="QGz-Gc-gYU"/>
+                                </constraints>
+                                <state key="normal" image="Plasson logo"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4K7-Ad-Lmu">
+                                <rect key="frame" x="0.0" y="128" width="600" height="428"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="ov5-hX-qQt">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ov5-hX-qQt" id="VKH-wH-10a">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ses-ql-J0h"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c8S-6a-PSC">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="Iy4-Bl-42q"/>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUk-CI-rcX">
+                                <rect key="frame" x="27" y="92" width="191" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="ECd-hy-nlw"/>
+                                    <constraint firstAttribute="height" constant="28" id="miW-vQ-7dE"/>
+                                </constraints>
+                                <state key="normal" title="Options --Search By :"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="4oT-Vx-z2V"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="trailing" secondItem="c8S-6a-PSC" secondAttribute="trailing" id="6K8-99-Bm5"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="trailing" secondItem="4K7-Ad-Lmu" secondAttribute="trailing" id="8Nh-lA-hmO"/>
+                            <constraint firstItem="0V0-xf-j6f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="42" id="98a-rp-Dpv"/>
+                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="top" secondItem="pUk-CI-rcX" secondAttribute="top" id="9B8-0O-xfo"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="By3-h3-biz"/>
+                            <constraint firstItem="0V0-xf-j6f" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="17" id="GdK-s0-aQl"/>
+                            <constraint firstItem="pUk-CI-rcX" firstAttribute="top" secondItem="0V0-xf-j6f" secondAttribute="bottom" constant="51" id="LOj-Up-l8u"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="4K7-Ad-Lmu" secondAttribute="leading" id="PxV-yC-TNL"/>
+                            <constraint firstItem="pUk-CI-rcX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="RZE-mz-RWJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oT0-RJ-WPh" secondAttribute="trailing" constant="-7" id="a04-H5-j8b"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="c8S-6a-PSC" secondAttribute="leading" id="dga-oc-Q0L"/>
+                            <constraint firstAttribute="trailing" secondItem="UGA-0o-1Ut" secondAttribute="trailing" id="kOc-CU-enp"/>
+                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="bottom" secondItem="c8S-6a-PSC" secondAttribute="top" id="oML-vv-1aY"/>
+                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="leading" secondItem="pUk-CI-rcX" secondAttribute="trailing" constant="8" symbolic="YES" id="rwJ-CR-k3p"/>
+                            <constraint firstItem="0V0-xf-j6f" firstAttribute="top" secondItem="UGA-0o-1Ut" secondAttribute="top" id="u4B-Dn-LgY"/>
+                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="top" secondItem="pUk-CI-rcX" secondAttribute="bottom" constant="8" id="zqX-J2-c5a"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="searchBar" destination="UGA-0o-1Ut" id="Lfu-eO-FYl"/>
+                        <outlet property="tableView" destination="4K7-Ad-Lmu" id="VP8-b1-0xd"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="395" y="351"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Plasson logo" width="49" height="27"/>
+    </resources>
 </document>
