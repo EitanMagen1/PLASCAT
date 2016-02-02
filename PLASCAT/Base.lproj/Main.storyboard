@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--PlassCat By Eitan Magen-->
@@ -28,12 +29,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-RJ-WPh">
-                                <rect key="frame" x="219" y="108" width="361" height="29"/>
+                                <rect key="frame" x="134" y="108" width="446" height="29"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="Ef0-RY-wdx"/>
-                                    <constraint firstAttribute="width" constant="361" id="jKF-gY-fAy"/>
-                                </constraints>
                                 <segments>
                                     <segment title="Part Number"/>
                                     <segment title="Assembly"/>
@@ -41,25 +38,16 @@
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUk-CI-rcX">
-                                <rect key="frame" x="20" y="108" width="191" height="28"/>
+                                <rect key="frame" x="20" y="108" width="106" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="191" id="ECd-hy-nlw"/>
-                                    <constraint firstAttribute="width" constant="191" id="NeY-6g-lsH"/>
-                                    <constraint firstAttribute="height" constant="28" id="miW-vQ-7dE"/>
+                                    <constraint firstAttribute="height" constant="28" id="ZNc-9R-ul7"/>
+                                    <constraint firstAttribute="width" constant="106" id="qTQ-jq-13M"/>
                                 </constraints>
                                 <state key="normal" title="Search By :"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="ECd-hy-nlw"/>
-                                    </mask>
-                                </variation>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4K7-Ad-Lmu">
                                 <rect key="frame" x="0.0" y="137" width="600" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="472" id="jf2-Qg-YXf"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="ov5-hX-qQt">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
@@ -76,10 +64,6 @@
                             </tableView>
                             <searchBar contentMode="redraw" text="" placeholder="search Plasson Catalog Data base" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Y8G-f3-O8q"/>
-                                    <constraint firstAttribute="width" constant="600" id="loj-gH-Ev3"/>
-                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="91R-sB-Xc6"/>
@@ -88,25 +72,31 @@
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="top" secondItem="pUk-CI-rcX" secondAttribute="bottom" constant="1" id="1KK-j3-24A"/>
-                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="leading" secondItem="pUk-CI-rcX" secondAttribute="trailing" constant="8" symbolic="YES" id="6YT-eg-1LC"/>
-                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="top" secondItem="pUk-CI-rcX" secondAttribute="top" id="C5Q-H5-nX4"/>
-                            <constraint firstItem="pUk-CI-rcX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RZE-mz-RWJ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="4K7-Ad-Lmu" secondAttribute="bottom" constant="-9" id="YED-OK-JKP"/>
-                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="aQE-Ga-CxS"/>
-                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gXo-RC-7bS"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="UGA-0o-1Ut" secondAttribute="trailing" constant="-20" id="goY-33-7pl"/>
-                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="leading" secondItem="UGA-0o-1Ut" secondAttribute="leading" id="iV2-oL-QHa"/>
-                            <constraint firstAttribute="trailing" secondItem="UGA-0o-1Ut" secondAttribute="trailing" id="kOc-CU-enp"/>
-                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="trailing" secondItem="UGA-0o-1Ut" secondAttribute="trailing" id="lIn-5n-wEo"/>
-                            <constraint firstItem="pUk-CI-rcX" firstAttribute="top" secondItem="UGA-0o-1Ut" secondAttribute="bottom" id="lOg-Nu-dyY"/>
-                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="w1U-Vx-e83"/>
+                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AtR-61-pAH"/>
+                            <constraint firstItem="oT0-RJ-WPh" firstAttribute="leading" secondItem="pUk-CI-rcX" secondAttribute="trailing" constant="8" symbolic="YES" id="CUK-0j-pTB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="4K7-Ad-Lmu" secondAttribute="bottom" constant="-9" id="D3y-FW-Hug"/>
+                            <constraint firstItem="pUk-CI-rcX" firstAttribute="top" secondItem="UGA-0o-1Ut" secondAttribute="bottom" id="Lag-rJ-FLQ"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RJJ-EG-vJU"/>
+                            <constraint firstAttribute="trailing" secondItem="UGA-0o-1Ut" secondAttribute="trailing" id="THf-mZ-c9z"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VjN-4p-OlW"/>
+                            <constraint firstItem="pUk-CI-rcX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zk1-Gt-2Q1"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="4K7-Ad-Lmu" secondAttribute="leading" id="eDn-gl-H4P"/>
+                            <constraint firstItem="4K7-Ad-Lmu" firstAttribute="top" secondItem="pUk-CI-rcX" secondAttribute="bottom" constant="1" id="hfH-6H-b63"/>
+                            <constraint firstItem="UGA-0o-1Ut" firstAttribute="trailing" secondItem="4K7-Ad-Lmu" secondAttribute="trailing" id="l6Y-uh-oyt"/>
+                            <constraint firstItem="pUk-CI-rcX" firstAttribute="top" secondItem="oT0-RJ-WPh" secondAttribute="top" id="lck-O2-PHq"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="PlassCat By Eitan Magen" id="xp8-Yf-fbd">
                         <barButtonItem key="leftBarButtonItem" title="Options" id="y13-zW-khX"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="fx5-7V-bFB"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="cancel" id="fx5-7V-bFB">
+                                <connections>
+                                    <action selector="cancel" destination="BYZ-38-t0r" id="hs9-8Q-V0A"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="refresh" id="Zg0-eL-pMz"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

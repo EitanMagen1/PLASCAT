@@ -17,7 +17,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "cancel")
+        
         processAndAppendSampleData ()
         
     }
@@ -62,33 +62,11 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         if searchText == "" {
             dataArray = [Data]()
             tableView?.reloadData()
-            objc_sync_exit(self)
+            //objc_sync_exit(self)
             return
         }
         
         // Start a new one download
-        /*
-        let resource = TheMovieDB.Resources.SearchPerson
-        let parameters = ["query" : searchText]
-        
-        searchTask = TheMovieDB.sharedInstance().taskForResource(resource, parameters: parameters) { [unowned self] jsonResult, error in
-        
-        // Handle the error case
-        if let error = error {
-        print("Error searching for actors: \(error.localizedDescription)")
-        return
-        }
-        
-        // Get a Swift dictionary from the JSON data
-        if let actorDictionaries = jsonResult.valueForKey("results") as? [[String : AnyObject]] {
-        self.searchTask = nil
-        
-        // Create an array of Person instances from the JSON dictionaries
-        self.actors = actorDictionaries.map() {
-        Person(dictionary: $0, context: self.temporaryContext)
-        }
-        */
-        // Reload the table on the main thread
         dispatch_async(dispatch_get_main_queue()) {
             self.tableView!.reloadData()
         }
