@@ -18,6 +18,7 @@
 		460409711C5E35830045BCFB /* PLS_LUL_BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */; };
 		460409741C5F52640045BCFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409731C5F52640045BCFB /* ItemViewController.swift */; };
 		460409761C5FA0870045BCFB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409751C5FA0870045BCFB /* Data.swift */; };
+		460409791C60E9D20045BCFB /* CSVFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409781C60E9D20045BCFB /* CSVFiles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL_BOM.csv; sourceTree = "<group>"; };
 		460409731C5F52640045BCFB /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		460409751C5FA0870045BCFB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		460409781C60E9D20045BCFB /* CSVFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVFiles.swift; path = ../CSVFiles.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		460409721C5E358B0045BCFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				460409781C60E9D20045BCFB /* CSVFiles.swift */,
 				4604096E1C5E357B0045BCFB /* PLS_LUL.csv */,
 				460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */,
 				4604094C1C5A4B570045BCFB /* Info.plist */,
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */,
+				460409791C60E9D20045BCFB /* CSVFiles.swift in Sources */,
 				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
 				460409741C5F52640045BCFB /* ItemViewController.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
