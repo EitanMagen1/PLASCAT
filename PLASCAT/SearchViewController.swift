@@ -8,6 +8,8 @@
 
 import UIKit
 
+let CellReuseId = "SearchCell"
+
 protocol SearchViewControllerDelegate {
     func dataPicker(dataPicker: SearchViewController, didFindData data: Data?)
 }
@@ -60,15 +62,15 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         
         // If the text is empty we are done
         if searchText == "" {
-            dataArray = [Data]()
+            //dataArray = [Data]()
             tableView?.reloadData()
             //objc_sync_exit(self)
             return
         }
-        
+
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
-            self.tableView!.reloadData()
+           self.tableView!.reloadData()
         }
     }
     
@@ -82,10 +84,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     // MARK: - Table View Delegate and Data Source
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let CellReuseId = "SearchCell"
         let dataFound = dataArray[indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseId)!
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseId , forIndexPath: indexPath)
         
         configureCell(cell, data: dataFound)
         
@@ -95,32 +96,40 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
+    //expand and contract the cell view method part 1: define a place o hold the index
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataPicked = dataArray[indexPath.row]
         // Alert the delegate
         delegate?.dataPicker(self, didFindData: dataPicked)
+        //expand and contract the cell view method part 2: hold the index , enable editing
+
         selectedRowIndex = indexPath
         tableView.beginUpdates()
         tableView.endUpdates()
-        print("taped")
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    //expand and contract the cell view method part 3 : toogle shrink and expand
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         //check if the index actually exists
         
         if  indexPath.row == selectedRowIndex.row {
-            return 100
+            return 120
         }
         return 44
     }
 
     
-    // All right, this is kind of meager. But its nice to be consistent
+    // cell data all in one place , expands the number of text lines to grow with the cell
     func configureCell(cell: UITableViewCell, data: Data) {
+        cell.layer.cornerRadius = cell.frame.width / 12
+        cell.clipsToBounds = true
         cell.textLabel!.text = data.itemDescription
+        cell.textLabel!.numberOfLines = 0;
+        cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     
     // MARK: - Sample Data
@@ -139,7 +148,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
     
     func hardCodedItemsData() -> [[String : AnyObject]] {
-        return  [[ "ItemDescription" : "Jessica-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines." ],["ItemDescription" : "Gabrielle-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."]]
+        return  [[ "ItemDescription" : "Jessica-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines." ],["ItemDescription" : "Gabrielle-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."],["ItemDescription" : "Libi-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."]]
     }
     
 }

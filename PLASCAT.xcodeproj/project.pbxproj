@@ -19,6 +19,8 @@
 		460409741C5F52640045BCFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409731C5F52640045BCFB /* ItemViewController.swift */; };
 		460409761C5FA0870045BCFB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409751C5FA0870045BCFB /* Data.swift */; };
 		460409791C60E9D20045BCFB /* CSVFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409781C60E9D20045BCFB /* CSVFiles.swift */; };
+		4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */; };
+		4604097D1C62354B0045BCFB /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097C1C62354B0045BCFB /* CSwiftV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		460409731C5F52640045BCFB /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		460409751C5FA0870045BCFB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		460409781C60E9D20045BCFB /* CSVFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVFiles.swift; path = ../CSVFiles.swift; sourceTree = "<group>"; };
+		4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		4604097C1C62354B0045BCFB /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 				460409771C5FA0960045BCFB /* Data Base */,
 				460409401C5A4B570045BCFB /* AppDelegate.swift */,
 				460409421C5A4B570045BCFB /* SearchViewController.swift */,
+				4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */,
 				460409731C5F52640045BCFB /* ItemViewController.swift */,
 				460409441C5A4B570045BCFB /* Main.storyboard */,
 				460409471C5A4B570045BCFB /* Assets.xcassets */,
@@ -152,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				460409751C5FA0870045BCFB /* Data.swift */,
+				4604097C1C62354B0045BCFB /* CSwiftV.swift */,
 			);
 			name = "Data Base";
 			sourceTree = "<group>";
@@ -293,9 +299,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */,
+				4604097D1C62354B0045BCFB /* CSwiftV.swift in Sources */,
 				460409791C60E9D20045BCFB /* CSVFiles.swift in Sources */,
 				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
 				460409741C5F52640045BCFB /* ItemViewController.swift in Sources */,
+				4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

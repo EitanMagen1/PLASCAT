@@ -60,6 +60,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="ses-ql-J0h"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="wVT-sm-1Zz"/>
                                 </connections>
                             </tableView>
                             <searchBar contentMode="redraw" text="" placeholder="search Plasson Catalog Data base" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
