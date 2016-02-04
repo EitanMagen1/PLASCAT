@@ -64,12 +64,15 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         if searchText == "" {
             //dataArray = [Data]()
             tableView?.reloadData()
+            
             //objc_sync_exit(self)
             return
         }
 
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
+            print("\(searchText)")
+            CSVFiles.sheredInstance.getItemForItemNumber(searchText)
            self.tableView!.reloadData()
         }
     }

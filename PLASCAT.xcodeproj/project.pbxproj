@@ -18,9 +18,9 @@
 		460409711C5E35830045BCFB /* PLS_LUL_BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */; };
 		460409741C5F52640045BCFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409731C5F52640045BCFB /* ItemViewController.swift */; };
 		460409761C5FA0870045BCFB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409751C5FA0870045BCFB /* Data.swift */; };
-		460409791C60E9D20045BCFB /* CSVFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409781C60E9D20045BCFB /* CSVFiles.swift */; };
 		4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */; };
-		4604097D1C62354B0045BCFB /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097C1C62354B0045BCFB /* CSwiftV.swift */; };
+		460409801C6394360045BCFB /* CSVFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097F1C6394360045BCFB /* CSVFiles.swift */; };
+		460409821C63943E0045BCFB /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409811C63943E0045BCFB /* CSV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,9 +58,9 @@
 		460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL_BOM.csv; sourceTree = "<group>"; };
 		460409731C5F52640045BCFB /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		460409751C5FA0870045BCFB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		460409781C60E9D20045BCFB /* CSVFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CSVFiles.swift; path = ../CSVFiles.swift; sourceTree = "<group>"; };
 		4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
-		4604097C1C62354B0045BCFB /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		4604097F1C6394360045BCFB /* CSVFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVFiles.swift; sourceTree = "<group>"; };
+		460409811C63943E0045BCFB /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +111,7 @@
 		4604093F1C5A4B570045BCFB /* PLASCAT */ = {
 			isa = PBXGroup;
 			children = (
+				4604097E1C6393D00045BCFB /* CSV */,
 				460409771C5FA0960045BCFB /* Data Base */,
 				460409401C5A4B570045BCFB /* AppDelegate.swift */,
 				460409421C5A4B570045BCFB /* SearchViewController.swift */,
@@ -145,9 +146,6 @@
 		460409721C5E358B0045BCFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				460409781C60E9D20045BCFB /* CSVFiles.swift */,
-				4604096E1C5E357B0045BCFB /* PLS_LUL.csv */,
-				460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */,
 				4604094C1C5A4B570045BCFB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -157,9 +155,19 @@
 			isa = PBXGroup;
 			children = (
 				460409751C5FA0870045BCFB /* Data.swift */,
-				4604097C1C62354B0045BCFB /* CSwiftV.swift */,
 			);
 			name = "Data Base";
+			sourceTree = "<group>";
+		};
+		4604097E1C6393D00045BCFB /* CSV */ = {
+			isa = PBXGroup;
+			children = (
+				4604096E1C5E357B0045BCFB /* PLS_LUL.csv */,
+				4604097F1C6394360045BCFB /* CSVFiles.swift */,
+				460409811C63943E0045BCFB /* CSV.swift */,
+				460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */,
+			);
+			name = CSV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,11 +307,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */,
-				4604097D1C62354B0045BCFB /* CSwiftV.swift in Sources */,
-				460409791C60E9D20045BCFB /* CSVFiles.swift in Sources */,
 				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
+				460409801C6394360045BCFB /* CSVFiles.swift in Sources */,
 				460409741C5F52640045BCFB /* ItemViewController.swift in Sources */,
 				4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */,
+				460409821C63943E0045BCFB /* CSV.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +537,7 @@
 				460409671C5A4B570045BCFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		460409681C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCATTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +546,7 @@
 				4604096A1C5A4B570045BCFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4604096B1C5A4B570045BCFB /* Build configuration list for PBXNativeTarget "PLASCATUITests" */ = {
 			isa = XCConfigurationList;
@@ -545,6 +555,7 @@
 				4604096D1C5A4B570045BCFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
