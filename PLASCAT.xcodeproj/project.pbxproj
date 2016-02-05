@@ -21,6 +21,7 @@
 		4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */; };
 		460409801C6394360045BCFB /* CSVFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097F1C6394360045BCFB /* CSVFiles.swift */; };
 		460409821C63943E0045BCFB /* CSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409811C63943E0045BCFB /* CSV.swift */; };
+		460409851C6495E30045BCFB /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409841C6495E30045BCFB /* CSwiftV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		4604097F1C6394360045BCFB /* CSVFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVFiles.swift; sourceTree = "<group>"; };
 		460409811C63943E0045BCFB /* CSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSV.swift; sourceTree = "<group>"; };
+		460409841C6495E30045BCFB /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,15 +113,13 @@
 		4604093F1C5A4B570045BCFB /* PLASCAT */ = {
 			isa = PBXGroup;
 			children = (
-				4604097E1C6393D00045BCFB /* CSV */,
+				460409831C63DBD00045BCFB /* ViewControler */,
 				460409771C5FA0960045BCFB /* Data Base */,
 				460409401C5A4B570045BCFB /* AppDelegate.swift */,
-				460409421C5A4B570045BCFB /* SearchViewController.swift */,
-				4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */,
-				460409731C5F52640045BCFB /* ItemViewController.swift */,
 				460409441C5A4B570045BCFB /* Main.storyboard */,
 				460409471C5A4B570045BCFB /* Assets.xcassets */,
 				460409491C5A4B570045BCFB /* LaunchScreen.storyboard */,
+				4604097E1C6393D00045BCFB /* CSV */,
 				460409721C5E358B0045BCFB /* Supporting Files */,
 			);
 			path = PLASCAT;
@@ -162,12 +162,23 @@
 		4604097E1C6393D00045BCFB /* CSV */ = {
 			isa = PBXGroup;
 			children = (
+				460409841C6495E30045BCFB /* CSwiftV.swift */,
 				4604096E1C5E357B0045BCFB /* PLS_LUL.csv */,
 				4604097F1C6394360045BCFB /* CSVFiles.swift */,
 				460409811C63943E0045BCFB /* CSV.swift */,
 				460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */,
 			);
 			name = CSV;
+			sourceTree = "<group>";
+		};
+		460409831C63DBD00045BCFB /* ViewControler */ = {
+			isa = PBXGroup;
+			children = (
+				460409421C5A4B570045BCFB /* SearchViewController.swift */,
+				4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */,
+				460409731C5F52640045BCFB /* ItemViewController.swift */,
+			);
+			name = ViewControler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 				460409741C5F52640045BCFB /* ItemViewController.swift in Sources */,
 				4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */,
 				460409821C63943E0045BCFB /* CSV.swift in Sources */,
+				460409851C6495E30045BCFB /* CSwiftV.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
