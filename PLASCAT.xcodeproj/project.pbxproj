@@ -14,13 +14,13 @@
 		4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409491C5A4B570045BCFB /* LaunchScreen.storyboard */; };
 		460409561C5A4B570045BCFB /* PLASCATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409551C5A4B570045BCFB /* PLASCATTests.swift */; };
 		460409611C5A4B570045BCFB /* PLASCATUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409601C5A4B570045BCFB /* PLASCATUITests.swift */; };
-		4604096F1C5E357B0045BCFB /* PLS_LUL.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4604096E1C5E357B0045BCFB /* PLS_LUL.csv */; };
 		460409711C5E35830045BCFB /* PLS_LUL_BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */; };
 		460409741C5F52640045BCFB /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409731C5F52640045BCFB /* ItemViewController.swift */; };
 		460409761C5FA0870045BCFB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409751C5FA0870045BCFB /* Data.swift */; };
 		4604097B1C61E9C90045BCFB /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */; };
 		460409801C6394360045BCFB /* CSVFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097F1C6394360045BCFB /* CSVFiles.swift */; };
 		460409851C6495E30045BCFB /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409841C6495E30045BCFB /* CSwiftV.swift */; };
+		460409871C669BA70045BCFB /* PLS_LUL.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409861C669BA70045BCFB /* PLS_LUL.csv */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,13 +54,13 @@
 		4604095C1C5A4B570045BCFB /* PLASCATUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLASCATUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		460409601C5A4B570045BCFB /* PLASCATUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLASCATUITests.swift; sourceTree = "<group>"; };
 		460409621C5A4B570045BCFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4604096E1C5E357B0045BCFB /* PLS_LUL.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL.csv; sourceTree = "<group>"; };
 		460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL_BOM.csv; sourceTree = "<group>"; };
 		460409731C5F52640045BCFB /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		460409751C5FA0870045BCFB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		4604097A1C61E9C90045BCFB /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		4604097F1C6394360045BCFB /* CSVFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVFiles.swift; sourceTree = "<group>"; };
 		460409841C6495E30045BCFB /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
+		460409861C669BA70045BCFB /* PLS_LUL.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,7 +162,7 @@
 			children = (
 				460409841C6495E30045BCFB /* CSwiftV.swift */,
 				4604097F1C6394360045BCFB /* CSVFiles.swift */,
-				4604096E1C5E357B0045BCFB /* PLS_LUL.csv */,
+				460409861C669BA70045BCFB /* PLS_LUL.csv */,
 				460409701C5E35830045BCFB /* PLS_LUL_BOM.csv */,
 			);
 			name = CSV;
@@ -285,8 +285,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				460409871C669BA70045BCFB /* PLS_LUL.csv in Resources */,
 				460409711C5E35830045BCFB /* PLS_LUL_BOM.csv in Resources */,
-				4604096F1C5E357B0045BCFB /* PLS_LUL.csv in Resources */,
 				4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */,
 				460409481C5A4B570045BCFB /* Assets.xcassets in Resources */,
 				460409461C5A4B570045BCFB /* Main.storyboard in Resources */,

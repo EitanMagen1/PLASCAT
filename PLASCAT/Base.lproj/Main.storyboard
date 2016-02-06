@@ -10,15 +10,6 @@
         <!--PlassCat By Eitan Magen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <searchDisplayController id="ZlP-th-qet">
-                    <connections>
-                        <outlet property="delegate" destination="BYZ-38-t0r" id="Xvf-S9-ZE4"/>
-                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="3d1-zf-1D9"/>
-                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="dj4-Px-Bpf"/>
-                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="39a-mp-h04"/>
-                    </connections>
-                </searchDisplayController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="PLASCAT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
@@ -28,14 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" momentary="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-RJ-WPh">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oT0-RJ-WPh">
                                 <rect key="frame" x="134" y="108" width="446" height="29"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="Part Number"/>
-                                    <segment title="Assembly"/>
+                                    <segment title="Description"/>
                                 </segments>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="e0H-6b-Uvx"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUk-CI-rcX">
                                 <rect key="frame" x="20" y="108" width="106" height="28"/>
@@ -63,28 +55,35 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wVT-sm-1Zz"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" text="" placeholder="search Plasson Catalog Data base" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
+                            <searchBar contentMode="redraw" text="" placeholder="Search Catalog By Part Number" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="91R-sB-Xc6"/>
                                 </connections>
                             </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wCb-PC-O2H">
+                                <rect key="frame" x="0.0" y="282" width="600" height="37"/>
+                                <color key="color" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="wCb-PC-O2H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="14b-tq-t1b"/>
                             <constraint firstItem="oT0-RJ-WPh" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="AtR-61-pAH"/>
                             <constraint firstItem="oT0-RJ-WPh" firstAttribute="leading" secondItem="pUk-CI-rcX" secondAttribute="trailing" constant="8" symbolic="YES" id="CUK-0j-pTB"/>
                             <constraint firstAttribute="bottomMargin" secondItem="4K7-Ad-Lmu" secondAttribute="bottom" constant="-9" id="D3y-FW-Hug"/>
                             <constraint firstItem="pUk-CI-rcX" firstAttribute="top" secondItem="UGA-0o-1Ut" secondAttribute="bottom" id="Lag-rJ-FLQ"/>
                             <constraint firstItem="UGA-0o-1Ut" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="RJJ-EG-vJU"/>
                             <constraint firstAttribute="trailing" secondItem="UGA-0o-1Ut" secondAttribute="trailing" id="THf-mZ-c9z"/>
+                            <constraint firstItem="wCb-PC-O2H" firstAttribute="leading" secondItem="UGA-0o-1Ut" secondAttribute="leading" id="TLF-XW-Mkx"/>
                             <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VjN-4p-OlW"/>
                             <constraint firstItem="pUk-CI-rcX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Zk1-Gt-2Q1"/>
                             <constraint firstItem="UGA-0o-1Ut" firstAttribute="leading" secondItem="4K7-Ad-Lmu" secondAttribute="leading" id="eDn-gl-H4P"/>
                             <constraint firstItem="4K7-Ad-Lmu" firstAttribute="top" secondItem="pUk-CI-rcX" secondAttribute="bottom" constant="1" id="hfH-6H-b63"/>
                             <constraint firstItem="UGA-0o-1Ut" firstAttribute="trailing" secondItem="4K7-Ad-Lmu" secondAttribute="trailing" id="l6Y-uh-oyt"/>
                             <constraint firstItem="pUk-CI-rcX" firstAttribute="top" secondItem="oT0-RJ-WPh" secondAttribute="top" id="lck-O2-PHq"/>
+                            <constraint firstItem="wCb-PC-O2H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pA7-U6-MJW"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -101,10 +100,21 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ActivityIndicator" destination="wCb-PC-O2H" id="qGA-aW-T14"/>
+                        <outlet property="SegmentedPNOrAssembly" destination="oT0-RJ-WPh" id="Hpm-tt-vA3"/>
                         <outlet property="searchBar" destination="UGA-0o-1Ut" id="Lfu-eO-FYl"/>
                         <outlet property="tableView" destination="4K7-Ad-Lmu" id="VP8-b1-0xd"/>
                     </connections>
                 </viewController>
+                <searchDisplayController id="ZlP-th-qet">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="Xvf-S9-ZE4"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="3d1-zf-1D9"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="dj4-Px-Bpf"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="39a-mp-h04"/>
+                    </connections>
+                </searchDisplayController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="762" y="199"/>
         </scene>

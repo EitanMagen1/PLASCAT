@@ -1,4 +1,8 @@
-﻿"ORG","Item Number","ENG Description","HEB Description","Status Code","Lifecycle Phase","Make / Buy","Unit Weight","Marketing Package","Pack Qty"
+﻿"
+PLS_Infrastructure / נתוני תשתיות פריט 3
+Organization Code Parameter: 'PLS', Item Number Parameter: '02%'"
+
+"ORG","Item Number","ENG Description","HEB Description","Status Code","Lifecycle Phase","Make / Buy","Unit Weight","Marketing Package","Pack Qty"
 "PLS","02001025","NOT ACTIVE- POULTRY CRATE MK1. - WITHOUT DOOR","NOT ACTIVE-- כלוב 1 קומ בלי דלת  יצוא","Inactive","Retirement","Buy",4.9,"",0
 "PLS","02001026","POULTRY CRATE MK1. - BLUE W/DOOR","כלוב דגם 1 כחול קומ","Active","Production","Buy",5.41,"FMA",2
 "PLS","02001027","POULTRY CRATE MK1. - GREY W/DOOR","..כלוב 1 קומ אפור","Active","Production","Buy",5.41,"FMA",14

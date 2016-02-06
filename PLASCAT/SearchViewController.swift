@@ -20,8 +20,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // processAndAppendSampleData ()
-        
     }
     
     
@@ -34,6 +32,22 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var searchBar : UISearchBar!
     
+    @IBOutlet weak var SegmentedPNOrAssembly: UISegmentedControl!
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+
+        switch SegmentedPNOrAssembly.selectedSegmentIndex
+        {
+        case 0:
+            searchBar.text = ""
+            searchBar.placeholder = "Search Catalog By Part Number"
+        case 1:
+            searchBar.text = ""
+            searchBar.placeholder = "Search Catalog By Description"
+
+        default:
+            break; 
+        }
+    }
     
     // The data for the table.
     var dataArray = [Data]()
@@ -44,6 +58,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     // MARK: - Actions
     
+    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBAction func cancel() {
         self.delegate?.dataPicker(self, didFindData: nil)
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -68,21 +83,22 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             //objc_sync_exit(self)
             return
         }
-
+        self.ActivityIndicator.hidden = false
+        self.ActivityIndicator.startAnimating()
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
             print("\(searchText)")
            // CSVFiles.sheredInstance.getItemForItemNumber(searchText)
           //  CSVFiles.sheredInstance.testString()
-            let charectersNumber = searchText.characters.count
-            if charectersNumber == 8 {
-            let ENGDescription = CSVFiles.sheredInstance.testFile(searchText)
-                let tempData = Data()
-                tempData.itemDescription = ENGDescription
-                self.dataArray.append(tempData)
-            }
+            
+            let searchTextCapital = searchText.uppercaseString
+            self.dataArray = CSVFiles.sheredInstance.testFile(searchTextCapital , SearchBy: self.SegmentedPNOrAssembly.selectedSegmentIndex)
             
             self.tableView!.reloadData()
+            self.ActivityIndicator.stopAnimating()
+            self.ActivityIndicator.hidden = true
+
+
         }
     }
     
