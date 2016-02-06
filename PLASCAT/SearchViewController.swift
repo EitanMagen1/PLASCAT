@@ -20,7 +20,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        processAndAppendSampleData ()
+       // processAndAppendSampleData ()
         
     }
     
@@ -72,8 +72,17 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
             print("\(searchText)")
-            CSVFiles.sheredInstance.getItemForItemNumber(searchText)
-           self.tableView!.reloadData()
+           // CSVFiles.sheredInstance.getItemForItemNumber(searchText)
+          //  CSVFiles.sheredInstance.testString()
+            let charectersNumber = searchText.characters.count
+            if charectersNumber == 8 {
+            let ENGDescription = CSVFiles.sheredInstance.testFile(searchText)
+                let tempData = Data()
+                tempData.itemDescription = ENGDescription
+                self.dataArray.append(tempData)
+            }
+            
+            self.tableView!.reloadData()
         }
     }
     
@@ -107,7 +116,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         // Alert the delegate
         delegate?.dataPicker(self, didFindData: dataPicked)
         //expand and contract the cell view method part 2: hold the index , enable editing
-
+        
         selectedRowIndex = indexPath
         tableView.beginUpdates()
         tableView.endUpdates()
@@ -139,7 +148,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     // Some sample data. This is a dictionary that is more or less similar to the
     // JSON data that you will download from Parse.
-    func processAndAppendSampleData ()
+ /*   func processAndAppendSampleData ()
     {
         let itemsData = hardCodedItemsData()
         for dictionary in itemsData {
@@ -148,11 +157,11 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             tempData.itemDescription = ItemDescription
             dataArray.append(tempData)
         }
-    }
+    } */
     
-    func hardCodedItemsData() -> [[String : AnyObject]] {
+   /* func hardCodedItemsData() -> [[String : AnyObject]] {
         return  [[ "ItemDescription" : "Jessica-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines." ],["ItemDescription" : "Gabrielle-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."],["ItemDescription" : "Libi-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."]]
-    }
+    }*/
     
 }
 
