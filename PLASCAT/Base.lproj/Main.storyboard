@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--PlassCat By Eitan Magen-->
@@ -41,11 +40,11 @@
                                 <rect key="frame" x="0.0" y="137" width="600" height="472"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="ov5-hX-qQt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="ov5-hX-qQt">
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ov5-hX-qQt" id="VKH-wH-10a">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -89,14 +88,11 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="PlassCat By Eitan Magen" id="xp8-Yf-fbd">
                         <barButtonItem key="leftBarButtonItem" title="Options" id="y13-zW-khX"/>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="cancel" id="fx5-7V-bFB">
-                                <connections>
-                                    <action selector="cancel" destination="BYZ-38-t0r" id="hs9-8Q-V0A"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="refresh" id="Zg0-eL-pMz"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="fx5-7V-bFB">
+                            <connections>
+                                <action selector="cancel" destination="BYZ-38-t0r" id="hs9-8Q-V0A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -104,6 +100,7 @@
                         <outlet property="SegmentedPNOrAssembly" destination="oT0-RJ-WPh" id="Hpm-tt-vA3"/>
                         <outlet property="searchBar" destination="UGA-0o-1Ut" id="Lfu-eO-FYl"/>
                         <outlet property="tableView" destination="4K7-Ad-Lmu" id="VP8-b1-0xd"/>
+                        <segue destination="ekf-e0-zfe" kind="show" identifier="segueToBOM" id="CFu-XA-PQC"/>
                     </connections>
                 </viewController>
                 <searchDisplayController id="ZlP-th-qet">
@@ -116,7 +113,61 @@
                 </searchDisplayController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="762" y="199"/>
+            <point key="canvasLocation" x="710" y="189"/>
+        </scene>
+        <!--BOM View Controller-->
+        <scene sceneID="09w-Ei-wou">
+            <objects>
+                <viewController storyboardIdentifier="BOMdestinationVC" title="BOM View Controller" id="Vf2-Vf-OkB" customClass="BOMViewController" customModule="PLASCAT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Re-Y6-bYo"/>
+                        <viewControllerLayoutGuide type="bottom" id="wp4-Pa-DTh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1cT-49-k07">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Fa-AT-4Y3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bomCell" id="JXZ-d1-rCd">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JXZ-d1-rCd" id="a1I-Od-JtF">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vf2-Vf-OkB" id="vfn-NP-0GV"/>
+                                    <outlet property="delegate" destination="Vf2-Vf-OkB" id="3rf-aV-Xiu"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="1Fa-AT-4Y3" secondAttribute="bottom" constant="9" id="1TY-eS-ncY"/>
+                            <constraint firstItem="1Fa-AT-4Y3" firstAttribute="leading" secondItem="1cT-49-k07" secondAttribute="leading" id="ntp-IW-aeX"/>
+                            <constraint firstItem="1Fa-AT-4Y3" firstAttribute="top" secondItem="0Re-Y6-bYo" secondAttribute="bottom" id="ukW-yc-JUb"/>
+                            <constraint firstAttribute="trailing" secondItem="1Fa-AT-4Y3" secondAttribute="trailing" id="xwe-h7-p6N"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PN -Description" id="DBR-fA-Zr4">
+                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="DXX-Xy-FxG">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="oQy-kc-NRm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="BomNavigation" destination="DBR-fA-Zr4" id="q1e-Xa-afn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKz-Mm-Fkn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2416" y="179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XBu-Xp-oeo">
@@ -136,5 +187,26 @@
             </objects>
             <point key="canvasLocation" x="-50" y="199"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J3l-eW-cb3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ekf-e0-zfe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gE1-OA-LiI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Vf2-Vf-OkB" kind="relationship" relationship="rootViewController" id="Uhk-tq-QDD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fuk-08-jtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="179"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oQy-kc-NRm"/>
+    </inferredMetricsTieBreakers>
 </document>

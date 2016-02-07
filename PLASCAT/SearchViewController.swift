@@ -10,9 +10,7 @@ import UIKit
 
 let CellReuseId = "SearchCell"
 
-protocol SearchViewControllerDelegate {
-    func dataPicker(dataPicker: SearchViewController, didFindData data: Data?)
-}
+
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     static let sheredInstance = SearchViewController()
@@ -21,7 +19,10 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
     }
-    
+    // when canceling the BOM  screen and returning as segue to the main view we wat to see the last search
+    override func viewWillAppear(animated: Bool) {
+        self.dismissViewControllerAnimated(false, completion: nil)
+    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -34,7 +35,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var SegmentedPNOrAssembly: UISegmentedControl!
     @IBAction func indexChanged(sender: UISegmentedControl) {
-
+        
         switch SegmentedPNOrAssembly.selectedSegmentIndex
         {
         case 0:
@@ -43,26 +44,21 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         case 1:
             searchBar.text = ""
             searchBar.placeholder = "Search Catalog By Description"
-
+            
         default:
-            break; 
+            break;
         }
     }
     
     // The data for the table.
     var dataArray = [Data]()
     
-    var delegate: SearchViewControllerDelegate?
     var searchTask: NSURLSessionDataTask?
     
     
     // MARK: - Actions
     
     @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
-    @IBAction func cancel() {
-        self.delegate?.dataPicker(self, didFindData: nil)
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     
     
     // MARK: - Search Bar Delegate
@@ -88,8 +84,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
             print("\(searchText)")
-           // CSVFiles.sheredInstance.getItemForItemNumber(searchText)
-          //  CSVFiles.sheredInstance.testString()
+            // CSVFiles.sheredInstance.getItemForItemNumber(searchText)
+            //  CSVFiles.sheredInstance.testString()
             
             let searchTextCapital = searchText.uppercaseString
             self.dataArray = CSVFiles.sheredInstance.testFile(searchTextCapital , SearchBy: self.SegmentedPNOrAssembly.selectedSegmentIndex)
@@ -97,8 +93,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             self.tableView!.reloadData()
             self.ActivityIndicator.stopAnimating()
             self.ActivityIndicator.hidden = true
-
-
+            
+            
         }
     }
     
@@ -107,7 +103,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-
+        
     }
     // MARK: - Table View Delegate and Data Source
     
@@ -126,21 +122,35 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
     //expand and contract the cell view method part 1: define a place o hold the index
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
-
+    
+    
+    var tempDataPicked = Data()
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "segueToBOM" {
+            let vc : BOMViewController = segue.destinationViewController as! BOMViewController
+            vc.ItemPassed = tempDataPicked
+        }
+    }
+    
+    
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataPicked = dataArray[indexPath.row]
-        // Alert the delegate
-        delegate?.dataPicker(self, didFindData: dataPicked)
+        // if the press is the second one
+        if  indexPath.row == selectedRowIndex.row {
+            tempDataPicked = dataPicked
+            self.performSegueWithIdentifier("segueToBOM", sender: nil);
+        }
         //expand and contract the cell view method part 2: hold the index , enable editing
         
         selectedRowIndex = indexPath
         tableView.beginUpdates()
         tableView.endUpdates()
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        // self.dismissViewControllerAnimated(true, completion: nil)
     }
     //expand and contract the cell view method part 3 : toogle shrink and expand
-
+    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         //check if the index actually exists
         
@@ -148,8 +158,12 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             return 120
         }
         return 44
+        
+        
     }
-
+    
+    //  tableView(_:accessoryButtonTappedForRowWithIndexPath:)
+    
     
     // cell data all in one place , expands the number of text lines to grow with the cell
     func configureCell(cell: UITableViewCell, data: Data) {
@@ -164,19 +178,19 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     // Some sample data. This is a dictionary that is more or less similar to the
     // JSON data that you will download from Parse.
- /*   func processAndAppendSampleData ()
+    /*   func processAndAppendSampleData ()
     {
-        let itemsData = hardCodedItemsData()
-        for dictionary in itemsData {
-            let ItemDescription = dictionary["ItemDescription"] as! String
-            let tempData = Data()
-            tempData.itemDescription = ItemDescription
-            dataArray.append(tempData)
-        }
+    let itemsData = hardCodedItemsData()
+    for dictionary in itemsData {
+    let ItemDescription = dictionary["ItemDescription"] as! String
+    let tempData = Data()
+    tempData.itemDescription = ItemDescription
+    dataArray.append(tempData)
+    }
     } */
     
-   /* func hardCodedItemsData() -> [[String : AnyObject]] {
-        return  [[ "ItemDescription" : "Jessica-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines." ],["ItemDescription" : "Gabrielle-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."],["ItemDescription" : "Libi-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."]]
+    /* func hardCodedItemsData() -> [[String : AnyObject]] {
+    return  [[ "ItemDescription" : "Jessica-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines." ],["ItemDescription" : "Gabrielle-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."],["ItemDescription" : "Libi-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."]]
     }*/
     
 }
