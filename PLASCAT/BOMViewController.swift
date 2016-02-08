@@ -8,19 +8,23 @@
 
 import UIKit
 
-let Cell = "bomCell"
-class BOMViewController: UIViewController {
+let CellReuseIdBOM = "bomCell"
+
+class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate  {
 
     static let sheredInstance = BOMViewController()
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // print("\(ItemPassed.itemDescription)")
+        
+        ItemBOM.append(ItemPassed)
+        tableView?.reloadData()
+
     }
     
-   
-    @IBOutlet weak var BomNavigation: UINavigationItem!
     
+    @IBOutlet weak var PartLabel: UILabel!
     
     // The data for the table.
     var ItemPassed : Data!
@@ -33,7 +37,7 @@ class BOMViewController: UIViewController {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let dataFound = ItemBOM[indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseId , forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdBOM , forIndexPath: indexPath)
         
         configureCell(cell, data: dataFound)
         
@@ -43,13 +47,13 @@ class BOMViewController: UIViewController {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ItemBOM.count
     }
+    
     //expand and contract the cell view method part 1: define a place o hold the index
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
       //  let dataPicked = dataArray[indexPath.row]
         // Alert the delegate
-        //delegate?.dataPicker(self, didFindData: dataPicked)
         //expand and contract the cell view method part 2: hold the index , enable editing
         
         selectedRowIndex = indexPath
@@ -75,6 +79,7 @@ class BOMViewController: UIViewController {
         cell.layer.cornerRadius = cell.frame.width / 12
         cell.clipsToBounds = true
         cell.textLabel!.text = data.itemDescription
+        // expend the number of text lines to fit the larger screen
         cell.textLabel!.numberOfLines = 0;
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }

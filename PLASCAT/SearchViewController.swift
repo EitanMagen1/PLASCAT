@@ -19,10 +19,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         
     }
-    // when canceling the BOM  screen and returning as segue to the main view we wat to see the last search
-    override func viewWillAppear(animated: Bool) {
-        self.dismissViewControllerAnimated(false, completion: nil)
-    }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -32,8 +28,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var searchBar : UISearchBar!
-    
+    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var SegmentedPNOrAssembly: UISegmentedControl!
+    
     @IBAction func indexChanged(sender: UISegmentedControl) {
         
         switch SegmentedPNOrAssembly.selectedSegmentIndex
@@ -56,9 +53,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     var searchTask: NSURLSessionDataTask?
     
     
-    // MARK: - Actions
     
-    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
     
     
     // MARK: - Search Bar Delegate
