@@ -37,11 +37,25 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let dataFound = ItemBOM[indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdBOM , forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdBOM , forIndexPath: indexPath) as! bomTableViewCell
+        cell.accessoryType = .DetailDisclosureButton
         
+       // cell.shareButton.tag = indexPath.row;
+       // cell.shareButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
         configureCell(cell, data: dataFound)
         
         return cell
+    }
+    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+       
+        let titleString = ItemBOM[indexPath.row].itemDescription
+        
+        let firstActivityItem = "\(titleString)"
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
+        
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,15 +66,13 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      //  let dataPicked = dataArray[indexPath.row]
-        // Alert the delegate
         //expand and contract the cell view method part 2: hold the index , enable editing
         
         selectedRowIndex = indexPath
         tableView.beginUpdates()
         tableView.endUpdates()
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
     }
     //expand and contract the cell view method part 3 : toogle shrink and expand
     
@@ -79,6 +91,7 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         cell.layer.cornerRadius = cell.frame.width / 12
         cell.clipsToBounds = true
         cell.textLabel!.text = data.itemDescription
+        
         // expend the number of text lines to fit the larger screen
         cell.textLabel!.numberOfLines = 0;
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping

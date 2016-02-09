@@ -56,7 +56,7 @@ class CSVFiles {
         }
         return []
     }
-    
+    // how to test a string instead of a
     func testString() {
         let inputString =
         "ORG,Item Number,ENG Description,HEB Description,Status Code,Lifecycle Phase,Make / Buy,Unit Weight,Marketing Package,Pack Qty\r\n" +

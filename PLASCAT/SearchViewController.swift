@@ -17,13 +17,14 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.ActivityIndicator.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         self.searchBar.becomeFirstResponder()
+        
     }
     
     @IBOutlet weak var tableView : UITableView!
@@ -37,10 +38,10 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         {
         case 0:
             searchBar.text = ""
-            searchBar.placeholder = "Search Catalog By Part Number"
+            searchBar.placeholder = "Search Catalog By Catalog Number"
         case 1:
             searchBar.text = ""
-            searchBar.placeholder = "Search Catalog By Description"
+            searchBar.placeholder = "Search Catalog By BOM"
             
         default:
             break;
@@ -61,6 +62,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     // Each time the search text changes we want to cancel any current download and start a new one
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
+        self.ActivityIndicator.hidden = false
+        self.ActivityIndicator.startAnimating()
         // Cancel the last task
         if let task = searchTask {
             task.cancel()
@@ -68,14 +71,15 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         
         // If the text is empty we are done
         if searchText == "" {
+            self.ActivityIndicator.hidden = true
+            self.ActivityIndicator.stopAnimating()
             //dataArray = [Data]()
             tableView?.reloadData()
             
             //objc_sync_exit(self)
             return
         }
-        self.ActivityIndicator.hidden = false
-        self.ActivityIndicator.startAnimating()
+       
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
             print("\(searchText)")
