@@ -1,22 +1,23 @@
 //
-//  CSVPNFiles.swift
+//  CSVBOMFiles.swift
 //  PLASCAT
 //
-//  Created by Lauren Efron on 02/02/2016.
+//  Created by Lauren Efron on 07/02/2016.
 //  Copyright © 2016 Eitan_Magen. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class CSVPNFiles {
-    static let sheredInstance = CSVPNFiles()
+class CSVBOMFiles {
+    static let sheredInstance = CSVBOMFiles()
     var error: NSErrorPointer = nil
     
     // open the file functions
-    func openLULFile()-> CSwiftV {
+    func openBOMFile()-> CSwiftV {
         var rawInputString = ""
         // start searching only after the PN was entered corectly or more then 3 leters were entered
-        let url = NSBundle.mainBundle().URLForResource( "PLS_LUL", withExtension: "csv")!
+        let url = NSBundle.mainBundle().URLForResource( "PLS_LUL_BOM", withExtension: "csv")!
         do {
             rawInputString = try String( contentsOfURL: url, encoding: NSUTF8StringEncoding)
         } catch let error as NSError {
@@ -35,22 +36,27 @@ class CSVPNFiles {
         if  charectersNumber > 3 {
             
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
+           
             for keyedrow in keyedRows {
-                if keyedrow["Item Number"]!.containsString(searchText) ||  keyedrow["ENG Description"]!.containsString(searchText) ||  keyedrow["HEB Description"]!.containsString(searchText) {
+                if keyedrow["Component Number"]!.containsString(searchText)
+                
+                {
                     
-                    let itemNumber = "Item Number  :\(keyedrow["Item Number"]!) \n"
-                    let engDescription = "English Description  :\(keyedrow["ENG Description"]!) \n"
-                    let statusCode = "Status Code:\(keyedrow["Status Code"]!) \n"
-                    let hebDescription = "Hebrew Description :\(keyedrow["HEB Description"]!) \n"
+                    let itemNumber = "Component searched:\(keyedrow["Component Number"]!) \n"
+                    let assemblyNumber = "Assembly Number:\(keyedrow["Assembly Number"]!) \n"
+                    let engDescription = "English Desciption:\(keyedrow["Assembly Description"]!) \n"
+                    let statusCode = "Status Code:\(keyedrow["Assembly Status Code"]!) \n"
+                    let hebDescription = "Hebrew Description :\(keyedrow["Assembly Hebrew Description"]!) \n"
+                    
                     let tempData = Data()
-                    tempData.itemDescription = itemNumber + statusCode + engDescription + hebDescription
+                    tempData.itemDescription = itemNumber + assemblyNumber + statusCode + engDescription + hebDescription
                     dataArray.append(tempData)
                     
                 }
             }
             if dataArray == [] {
                 let tempData = Data()
-                tempData.itemDescription = "No items Found"
+                tempData.itemDescription = "No Assembly Found"
                 dataArray.append(tempData)
             }
         }

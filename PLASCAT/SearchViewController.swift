@@ -15,11 +15,13 @@ let CellReuseId = "SearchCell"
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     static let sheredInstance = SearchViewController()
-    var csv = CSVPNFiles.sheredInstance.openLULFile()
-
+    //open the files get ready for search
+    var csvLUL = CSVPNFiles.sheredInstance.openLULFile()
+    var csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  self.ActivityIndicator.hidden = true
+        //  self.ActivityIndicator.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -56,7 +58,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     var searchTask: NSURLSessionDataTask?
     
     // MARK: - Search Bar Delegate
-        
+    
     // Each time the search text changes we want to cancel any current download and start a new one
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -65,22 +67,13 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         // Cancel the last task
         if let task = searchTask {
             task.cancel()
-
+            
             return
         }
-        //delay function
-        /*
-        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
-        dispatch_after(time, dispatch_get_main_queue()) {
-        //put your code which should be executed with a delay here
-        }
-        */
-      //  NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "getHints", object: nil)
-    
         // If the text is empty we are done
         if searchText == "" {
-           // self.ActivityIndicator.hidden = true
-          //  self.ActivityIndicator.stopAnimating()
+            // self.ActivityIndicator.hidden = true
+            //  self.ActivityIndicator.stopAnimating()
             dataArray = [Data]()
             tableView?.reloadData()
             objc_sync_exit(self)
@@ -94,9 +87,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             let searchTextCapital = searchText.uppercaseString
             let searchTextNoLeadingZero = self.trimLeadingZeroes(searchTextCapital)
             if self.SegmentedPNOrAssembly.selectedSegmentIndex == 0 {
-                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: self.csv)
+                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: self.csvLUL)
             }else if self.SegmentedPNOrAssembly.selectedSegmentIndex == 1 {
-                
+                self.dataArray = CSVBOMFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: self.csvBOM)
             }
             self.tableView!.reloadData()
             self.ActivityIndicator.stopAnimating()
@@ -104,26 +97,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             
             
         }
-
-        /*
-        // Start a new one download
-        dispatch_async(dispatch_get_main_queue()) {
-            print("\(searchText)")
-            
-            let searchTextCapital = searchText.uppercaseString
-            let searchTextNoLeadingZero = self.trimLeadingZeroes(searchTextCapital)
-            if self.SegmentedPNOrAssembly.selectedSegmentIndex == 0 {
-            self.dataArray = CSVPNFiles.sheredInstance.testFile(searchTextNoLeadingZero )
-            }else if self.SegmentedPNOrAssembly.selectedSegmentIndex == 1 {
-                
-            }
-            self.tableView!.reloadData()
-            self.ActivityIndicator.stopAnimating()
-            self.ActivityIndicator.hidden = true
-            
-            
-        }
-        */
+        
     }
     
     
@@ -200,7 +174,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     func presentError(alertString: String){
-       // self.ActivityIndicator.stopAnimating()
+        // self.ActivityIndicator.stopAnimating()
         let ac = UIAlertController(title: "Error", message: alertString, preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(ac, animated: true, completion: nil)
@@ -213,7 +187,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         }
         return result
     }
-
+    
     // MARK: - Sample Data
     
     // Some sample data. This is a dictionary that is more or less similar to the

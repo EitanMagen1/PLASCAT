@@ -13,11 +13,12 @@ let CellReuseIdBOM = "bomCell"
 class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate  {
 
     static let sheredInstance = BOMViewController()
+    var csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ItemBOM = CSVBomFiles.sheredInstance.BOMFile(ItemPassed.itemDescription )
+       // self.ItemBOM = CSVBOMFiles.sheredInstance.(ItemPassed.itemDescription )
         ItemBOM.append(ItemPassed)
         tableView?.reloadData()
 
