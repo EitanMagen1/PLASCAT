@@ -15,7 +15,8 @@ let CellReuseId = "SearchCell"
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     static let sheredInstance = SearchViewController()
-    
+    var csv = CSVPNFiles.sheredInstance.openLULFile()
+
     override func viewDidLoad() {
         super.viewDidLoad()
       //  self.ActivityIndicator.hidden = true
@@ -86,8 +87,25 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             return
         }
         
-        
-        
+        // Start a new one download
+        dispatch_async(dispatch_get_main_queue()) {
+            print("\(searchText)")
+            
+            let searchTextCapital = searchText.uppercaseString
+            let searchTextNoLeadingZero = self.trimLeadingZeroes(searchTextCapital)
+            if self.SegmentedPNOrAssembly.selectedSegmentIndex == 0 {
+                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: self.csv)
+            }else if self.SegmentedPNOrAssembly.selectedSegmentIndex == 1 {
+                
+            }
+            self.tableView!.reloadData()
+            self.ActivityIndicator.stopAnimating()
+            self.ActivityIndicator.hidden = true
+            
+            
+        }
+
+        /*
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
             print("\(searchText)")
@@ -105,6 +123,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             
             
         }
+        */
     }
     
     
