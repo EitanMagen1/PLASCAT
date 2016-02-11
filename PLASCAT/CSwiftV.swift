@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Haight on 30/08/2014.
 //  Copyright (c) 2014 ManyThings. All rights reserved.
-//
+//  https://github.com/Daniel1of1/CSwiftV
 
 import Foundation
 

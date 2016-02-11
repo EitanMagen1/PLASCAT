@@ -58,7 +58,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wVT-sm-1Zz"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" text="" placeholder="Search Catalog By Part Number" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
+                            <searchBar contentMode="redraw" text="" placeholder="Search Catalog By :" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
                                 <rect key="frame" x="0.0" y="64" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 let CellReuseId = "SearchCell"
 
@@ -17,7 +18,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.ActivityIndicator.hidden = true
+      //  self.ActivityIndicator.hidden = true
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -53,12 +54,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     var searchTask: NSURLSessionDataTask?
     
-    
-    
-    
-    
     // MARK: - Search Bar Delegate
-    
+        
     // Each time the search text changes we want to cancel any current download and start a new one
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -67,28 +64,41 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         // Cancel the last task
         if let task = searchTask {
             task.cancel()
-        }
-        
-        // If the text is empty we are done
-        if searchText == "" {
-            self.ActivityIndicator.hidden = true
-            self.ActivityIndicator.stopAnimating()
-            //dataArray = [Data]()
-            tableView?.reloadData()
-            
-            //objc_sync_exit(self)
+
             return
         }
-       
+        //delay function
+        /*
+        let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 4 * Int64(NSEC_PER_SEC))
+        dispatch_after(time, dispatch_get_main_queue()) {
+        //put your code which should be executed with a delay here
+        }
+        */
+      //  NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: "getHints", object: nil)
+    
+        // If the text is empty we are done
+        if searchText == "" {
+           // self.ActivityIndicator.hidden = true
+          //  self.ActivityIndicator.stopAnimating()
+            dataArray = [Data]()
+            tableView?.reloadData()
+            objc_sync_exit(self)
+            return
+        }
+        
+        
+        
         // Start a new one download
         dispatch_async(dispatch_get_main_queue()) {
             print("\(searchText)")
-            // CSVFiles.sheredInstance.getItemForItemNumber(searchText)
-            //  CSVFiles.sheredInstance.testString()
             
             let searchTextCapital = searchText.uppercaseString
-            self.dataArray = CSVFiles.sheredInstance.testFile(searchTextCapital , SearchBy: self.SegmentedPNOrAssembly.selectedSegmentIndex)
-            
+            let searchTextNoLeadingZero = self.trimLeadingZeroes(searchTextCapital)
+            if self.SegmentedPNOrAssembly.selectedSegmentIndex == 0 {
+            self.dataArray = CSVPNFiles.sheredInstance.testFile(searchTextNoLeadingZero )
+            }else if self.SegmentedPNOrAssembly.selectedSegmentIndex == 1 {
+                
+            }
             self.tableView!.reloadData()
             self.ActivityIndicator.stopAnimating()
             self.ActivityIndicator.hidden = true
@@ -122,7 +132,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     //expand and contract the cell view method part 1: define a place o hold the index
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     
-    
+    // transfer the data found to the next view controller search in BOM file
     var tempDataPicked = Data()
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueToBOM" {
@@ -130,8 +140,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             vc.ItemPassed = tempDataPicked
         }
     }
-    
-    
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataPicked = dataArray[indexPath.row]
@@ -172,7 +180,21 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         cell.textLabel!.numberOfLines = 0;
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
-    
+    func presentError(alertString: String){
+       // self.ActivityIndicator.stopAnimating()
+        let ac = UIAlertController(title: "Error", message: alertString, preferredStyle: .Alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(ac, animated: true, completion: nil)
+    }
+    func trimLeadingZeroes(input: String) -> String {
+        var result = ""
+        for character in input.characters {
+            if result.isEmpty && character == "0" { continue }
+            result.append(character)
+        }
+        return result
+    }
+
     // MARK: - Sample Data
     
     // Some sample data. This is a dictionary that is more or less similar to the
@@ -189,7 +211,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     } */
     
     /* func hardCodedItemsData() -> [[String : AnyObject]] {
-    return  [[ "ItemDescription" : "Jessica-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines." ],["ItemDescription" : "Gabrielle-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."],["ItemDescription" : "Libi-Plasson Industries Ltd. is a global manufacturer of plastic fittings for plastic pipes used in water distribution systems, gas conveyance systems, industrial fluid transfer and wastewater systems, and mines."]]
+    return  [[ "ItemDescription" : "Jessica-Plasson" ],["ItemDescription" : "Gabrielle- mines."],["ItemDescription" : "Libi-Plasson mines."]]
     }*/
     
 }

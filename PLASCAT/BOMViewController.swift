@@ -17,7 +17,7 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.ItemBOM = CSVBomFiles.sheredInstance.BOMFile(ItemPassed.itemDescription )
         ItemBOM.append(ItemPassed)
         tableView?.reloadData()
 
