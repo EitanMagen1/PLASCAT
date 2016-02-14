@@ -13,15 +13,13 @@ let CellReuseIdBOM = "bomCell"
 class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate  {
 
     static let sheredInstance = BOMViewController()
-    var csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.ItemBOM = CSVBOMFiles.sheredInstance.(ItemPassed.itemDescription )
-        ItemBOM.append(ItemPassed)
+        let CSVOfBOM = SearchViewController.sheredInstance.csvBOM
+       ItemBOM = CSVBOMFiles.sheredInstance.searchInFileForAssembly(ItemPassed.ItemNumber, csv: CSVOfBOM )
         tableView?.reloadData()
-
     }
     
     
@@ -81,7 +79,7 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         //check if the index actually exists
         
         if  indexPath.row == selectedRowIndex.row {
-            return 120
+            return 160
         }
         return 44
     }

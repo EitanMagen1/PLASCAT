@@ -33,27 +33,55 @@ class CSVBOMFiles {
         let charectersNumber = searchText.characters.count
         
         var dataArray = [Data]()
-        if  charectersNumber > 3 {
+        if  charectersNumber > 4 {
             
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
-           
+            var assemblyNumber = ""
+            var assemblyNumberOnly = ""
+            var engDescription = ""
+            var statusCode = ""
+            var hebDescription = ""
+            var PLSblocker = false
             for keyedrow in keyedRows {
-                if keyedrow["Component Number"]!.containsString(searchText)
-                
-                {
-                    
-                    let itemNumber = "Component searched:\(keyedrow["Component Number"]!) \n"
-                    let assemblyNumber = "Assembly Number:\(keyedrow["Assembly Number"]!) \n"
-                    let engDescription = "English Desciption:\(keyedrow["Assembly Description"]!) \n"
-                    let statusCode = "Status Code:\(keyedrow["Assembly Status Code"]!) \n"
-                    let hebDescription = "Hebrew Description :\(keyedrow["Assembly Hebrew Description"]!) \n"
-                    
-                    let tempData = Data()
-                    tempData.itemDescription = itemNumber + assemblyNumber + statusCode + engDescription + hebDescription
-                    dataArray.append(tempData)
+                //goes over all of the assemblies
+                if keyedrow["Assembly Number"] != "" {
+                    assemblyNumber = "Assembly Number:\(keyedrow["Assembly Number"]!) \n"
+                    assemblyNumberOnly = "\(keyedrow["Assembly Number"]!)"
+
+                    engDescription = "English Desciption:\(keyedrow["Assembly Description"]!) \n"
+                    statusCode = "Status Code:\(keyedrow["Assembly Status Code"]!) \n"
+                    hebDescription = "Hebrew Description :\(keyedrow["Assembly Hebrew Description"]!) \n"
                     
                 }
+                // prevent second count
+                if keyedrow["ORG"] == "PLS" {
+                    PLSblocker = true
+                } else if keyedrow["ORG"] == "MST" {
+                    PLSblocker = false
+                }
+                
+                if keyedrow["Assembly Number"]!.containsString(searchText) || keyedrow["Assembly Description"]!.containsString(searchText) {
+                    let itemSearched = "Component searched:\(searchText) \n"
+                    let tempData = Data()
+                    tempData.itemDescription = itemSearched + assemblyNumber + statusCode + engDescription + hebDescription
+                    tempData.ItemNumber = assemblyNumberOnly
+                    
+                    dataArray.append(tempData)
+                }
+
+                if keyedrow["Component Number"]!.containsString(searchText) && PLSblocker == false || keyedrow["Component Description"]!.containsString(searchText) && PLSblocker == false || keyedrow["Component Hebrew Description"]!.containsString(searchText) && PLSblocker == false {
+                    let itemSearch = "Component searched: \(searchText) \n"
+                    let itemPN = "Component Number: \(keyedrow["Component Number"]!)"
+                    let tempData = Data()
+                    tempData.itemDescription = itemSearch + assemblyNumber + statusCode + engDescription + hebDescription + itemPN
+                    tempData.ItemNumber = assemblyNumberOnly
+
+                    dataArray.append(tempData)
+                }
+                
+                
             }
+            
             if dataArray == [] {
                 let tempData = Data()
                 tempData.itemDescription = "No Assembly Found"
@@ -62,6 +90,50 @@ class CSVBOMFiles {
         }
         return dataArray
     }
-    
+    func searchInFileForAssembly ( searchText : String, csv : CSwiftV) ->[Data] {
+        
+        var dataArray = [Data]()
+        guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
+        var assemblyNumber = ""
+        var engDescription = ""
+        var statusCode = ""
+        var hebDescription = ""
+        var UsePLSAsExitPoint = false
+        for keyedrow in keyedRows {
+            //goes over all of the assemblies
+            if keyedrow["Assembly Number"] == searchText {
+                assemblyNumber = "Assembly Number:\(keyedrow["Assembly Number"]!) \n"
+                engDescription = "English Desciption:\(keyedrow["Assembly Description"]!) \n"
+                statusCode = "Status Code:\(keyedrow["Assembly Status Code"]!) \n"
+                hebDescription = "Hebrew Description :\(keyedrow["Assembly Hebrew Description"]!) \n"
+                let tempData = Data()
+                tempData.itemDescription = assemblyNumber + engDescription + hebDescription + statusCode
+                dataArray.append(tempData)
+                UsePLSAsExitPoint = true
+            }
+            
+            if UsePLSAsExitPoint == true {
+                if keyedrow["ORG"] == "PLS" {
+                    break
+                }
+                let itemNumber = "Item Number :\(keyedrow["Component Number"]!) \n"
+                let engDescription = "English Description  :\(keyedrow["Component Description"]!) \n"
+                let hebDescription = "Hebrew Description :\(keyedrow["Component Hebrew Description"]!) \n"
+                let tempData = Data()
+                tempData.itemDescription = itemNumber + engDescription + hebDescription
+                dataArray.append(tempData)
+
+                
+            }
+        }
+        
+        if dataArray == [] {
+            let tempData = Data()
+            tempData.itemDescription = "No Assembly Found"
+            dataArray.append(tempData)
+        }
+        
+        return dataArray
+    }
 }
 

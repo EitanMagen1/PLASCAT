@@ -123,15 +123,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="47" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Fa-AT-4Y3">
-                                <rect key="frame" x="0.0" y="138" width="600" height="426"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Fa-AT-4Y3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="500"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bomCell" editingAccessoryType="disclosureIndicator" rowHeight="47" id="JXZ-d1-rCd" customClass="bomTableViewCell" customModule="PLASCAT" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="47"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bomCell" editingAccessoryType="disclosureIndicator" rowHeight="48" id="JXZ-d1-rCd" customClass="bomTableViewCell" customModule="PLASCAT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JXZ-d1-rCd" id="a1I-Od-JtF">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="47"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -155,7 +155,7 @@
                         <constraints>
                             <constraint firstItem="2zv-1H-QS5" firstAttribute="trailing" secondItem="1Fa-AT-4Y3" secondAttribute="trailing" id="cO2-TG-lWq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="1Fa-AT-4Y3" secondAttribute="bottom" constant="36" id="eo2-rE-gNx"/>
-                            <constraint firstItem="1Fa-AT-4Y3" firstAttribute="top" secondItem="2zv-1H-QS5" secondAttribute="bottom" constant="8" symbolic="YES" id="hfs-1e-YWM"/>
+                            <constraint firstItem="1Fa-AT-4Y3" firstAttribute="top" secondItem="2zv-1H-QS5" secondAttribute="bottom" constant="-66" id="hfs-1e-YWM"/>
                             <constraint firstAttribute="trailing" secondItem="1Fa-AT-4Y3" secondAttribute="trailing" id="iMq-1V-rnZ"/>
                             <constraint firstItem="2zv-1H-QS5" firstAttribute="leading" secondItem="1Fa-AT-4Y3" secondAttribute="leading" id="jkT-MB-S5I"/>
                             <constraint firstItem="1Fa-AT-4Y3" firstAttribute="leading" secondItem="1cT-49-k07" secondAttribute="leading" id="tfx-wQ-epq"/>

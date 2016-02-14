@@ -32,7 +32,7 @@ class CSVPNFiles {
         let charectersNumber = searchText.characters.count
         
         var dataArray = [Data]()
-        if  charectersNumber > 3 {
+        if  charectersNumber > 4 {
             
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             for keyedrow in keyedRows {
@@ -42,8 +42,10 @@ class CSVPNFiles {
                     let engDescription = "English Description  :\(keyedrow["ENG Description"]!) \n"
                     let statusCode = "Status Code:\(keyedrow["Status Code"]!) \n"
                     let hebDescription = "Hebrew Description :\(keyedrow["HEB Description"]!) \n"
+                    
                     let tempData = Data()
                     tempData.itemDescription = itemNumber + statusCode + engDescription + hebDescription
+                    tempData.ItemNumber = "\(keyedrow["Item Number"]!)"
                     dataArray.append(tempData)
                     
                 }

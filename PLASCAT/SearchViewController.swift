@@ -10,8 +10,7 @@ import UIKit
 import Foundation
 
 let CellReuseId = "SearchCell"
-
-
+let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     static let sheredInstance = SearchViewController()
@@ -41,10 +40,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         switch SegmentedPNOrAssembly.selectedSegmentIndex
         {
         case 0:
-            searchBar.text = ""
             searchBar.placeholder = "Search Catalog By Catalog Number"
         case 1:
-            searchBar.text = ""
             searchBar.placeholder = "Search Catalog By BOM"
             
         default:
@@ -147,7 +144,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         tableView.beginUpdates()
         tableView.endUpdates()
         
-        // self.dismissViewControllerAnimated(true, completion: nil)
     }
     //expand and contract the cell view method part 3 : toogle shrink and expand
     
@@ -155,14 +151,13 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         //check if the index actually exists
         
         if  indexPath.row == selectedRowIndex.row {
-            return 120
+            return 180
         }
         return 44
         
         
     }
     
-    //  tableView(_:accessoryButtonTappedForRowWithIndexPath:)
     
     
     // cell data all in one place , expands the number of text lines to grow with the cell

@@ -12,9 +12,11 @@ class Data: NSObject {
     
     struct Keys {
         static let ItemDescription = "description"
+        static let ItemNumber = ""
     }
 
     
     var itemDescription: String = ""
+    var ItemNumber : String = ""
 
 }

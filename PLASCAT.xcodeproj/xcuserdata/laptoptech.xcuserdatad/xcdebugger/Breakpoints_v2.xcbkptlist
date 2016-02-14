@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "476885921.759379"
+            timestampString = "477088308.982147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "SearchViewController"
-            landmarkType = "3">
+            startingLineNumber = "13"
+            endingLineNumber = "13">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "476888503.660444"
+            timestampString = "477133892.422089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "476888503.660444"
+            timestampString = "477133892.422089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "SearchViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "476888503.660444"
+            timestampString = "477133892.422089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "476888503.660444"
+            timestampString = "477133892.422089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -138,11 +136,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/BOMViewController.swift"
-            timestampString = "476888787.653658"
+            timestampString = "477089426.546597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "tableView(_:accessoryButtonTappedForRowWithIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,58 +151,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "476885729.853713"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "13"
-            endingLineNumber = "13">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "globalinit_33_57EC21D8F0E2F95AF4B3466037991993_func1"
-                  moduleName = "PLASCAT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/laptoptech/Documents/IOS%20nanodegree/PLASCAT/PLASCAT/SearchViewController.swift"
-                  timestampString = "476885729.870547"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "4">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PLASCAT.csv.unsafeMutableAddressor : PLASCAT.CSwiftV"
-                  moduleName = "PLASCAT"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/laptoptech/Documents/IOS%20nanodegree/PLASCAT/PLASCAT/SearchViewController.swift"
-                  timestampString = "476885729.870845"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13"
-                  offsetFromSymbolStart = "4">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "PLASCAT/CSVBOMFiles.swift"
-            timestampString = "476889801.048368"
+            timestampString = "477088886.221084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "searchInFile(_:csv:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -216,12 +168,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/CSVBOMFiles.swift"
-            timestampString = "476889801.048368"
+            timestampString = "477135011.297551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "searchInFile(_:csv:)"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "searchInFileForAssembly(_:csv:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PLASCAT/BOMViewController.swift"
+            timestampString = "477089426.546597"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PLASCAT/BOMViewController.swift"
+            timestampString = "477089426.546597"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
