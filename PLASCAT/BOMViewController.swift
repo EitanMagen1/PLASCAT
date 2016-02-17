@@ -14,14 +14,22 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
 
     static let sheredInstance = BOMViewController()
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let CSVOfBOM = SearchViewController.sheredInstance.csvBOM
-       ItemBOM = CSVBOMFiles.sheredInstance.searchInFileForAssembly(ItemPassed.ItemNumber, csv: CSVOfBOM )
-        tableView?.reloadData()
-    }
+        activityIndicator.startAnimating()
+        activityIndicator.hidden = false
+           }
     
+    override func viewDidAppear(animated : Bool ) {
+        super.viewDidAppear(true)
+        ItemBOM = CSVBOMFiles.sheredInstance.searchInFileForAssembly(ItemPassed.ItemNumber, csv: csvBOM )
+        tableView?.reloadData()
+        activityIndicator.stopAnimating()
+        activityIndicator.hidden = true
+
+    }
     
     @IBOutlet weak var PartLabel: UILabel!
     

@@ -33,7 +33,7 @@ class CSVBOMFiles {
         let charectersNumber = searchText.characters.count
         
         var dataArray = [Data]()
-        if  charectersNumber > 4 {
+        if  charectersNumber > 2 {
             
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             var assemblyNumber = ""
@@ -68,7 +68,7 @@ class CSVBOMFiles {
                     
                     dataArray.append(tempData)
                 }
-
+                
                 if keyedrow["Component Number"]!.containsString(searchText) && PLSblocker == false || keyedrow["Component Description"]!.containsString(searchText) && PLSblocker == false || keyedrow["Component Hebrew Description"]!.containsString(searchText) && PLSblocker == false {
                     let itemSearch = "Component searched: \(searchText) \n"
                     let itemPN = "Component Number: \(keyedrow["Component Number"]!)"
@@ -78,7 +78,7 @@ class CSVBOMFiles {
 
                     dataArray.append(tempData)
                 }
-                
+
                 
             }
             
@@ -111,7 +111,7 @@ class CSVBOMFiles {
                 dataArray.append(tempData)
                 UsePLSAsExitPoint = true
             }
-            
+            /*
             if UsePLSAsExitPoint == true {
                 if keyedrow["ORG"] == "PLS" {
                     break
@@ -125,6 +125,7 @@ class CSVBOMFiles {
 
                 
             }
+            */
         }
         
         if dataArray == [] {

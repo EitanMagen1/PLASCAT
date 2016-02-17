@@ -32,7 +32,7 @@ class CSVPNFiles {
         let charectersNumber = searchText.characters.count
         
         var dataArray = [Data]()
-        if  charectersNumber > 4 {
+        if  charectersNumber > 2 {
             
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             for keyedrow in keyedRows {

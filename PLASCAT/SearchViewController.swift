@@ -10,13 +10,14 @@ import UIKit
 import Foundation
 
 let CellReuseId = "SearchCell"
+//open the files get ready for search
+
 let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
+let csvLUL = CSVPNFiles.sheredInstance.openLULFile()
+
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     static let sheredInstance = SearchViewController()
-    //open the files get ready for search
-    var csvLUL = CSVPNFiles.sheredInstance.openLULFile()
-    var csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,9 +85,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
             let searchTextCapital = searchText.uppercaseString
             let searchTextNoLeadingZero = self.trimLeadingZeroes(searchTextCapital)
             if self.SegmentedPNOrAssembly.selectedSegmentIndex == 0 {
-                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: self.csvLUL)
+                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvLUL)
             }else if self.SegmentedPNOrAssembly.selectedSegmentIndex == 1 {
-                self.dataArray = CSVBOMFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: self.csvBOM)
+                self.dataArray = CSVBOMFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvBOM)
             }
             self.tableView!.reloadData()
             self.ActivityIndicator.stopAnimating()
@@ -99,7 +100,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     
     
-    
+    //******
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         

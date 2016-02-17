@@ -150,9 +150,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pVW-Eh-3Vd">
+                                <rect key="frame" x="281" y="282" width="37" height="37"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pVW-Eh-3Vd" firstAttribute="centerX" secondItem="2zv-1H-QS5" secondAttribute="centerX" id="UF6-ro-Zq2"/>
                             <constraint firstItem="2zv-1H-QS5" firstAttribute="trailing" secondItem="1Fa-AT-4Y3" secondAttribute="trailing" id="cO2-TG-lWq"/>
                             <constraint firstAttribute="bottomMargin" secondItem="1Fa-AT-4Y3" secondAttribute="bottom" constant="36" id="eo2-rE-gNx"/>
                             <constraint firstItem="1Fa-AT-4Y3" firstAttribute="top" secondItem="2zv-1H-QS5" secondAttribute="bottom" constant="-66" id="hfs-1e-YWM"/>
@@ -160,10 +166,12 @@
                             <constraint firstItem="2zv-1H-QS5" firstAttribute="leading" secondItem="1Fa-AT-4Y3" secondAttribute="leading" id="jkT-MB-S5I"/>
                             <constraint firstItem="1Fa-AT-4Y3" firstAttribute="leading" secondItem="1cT-49-k07" secondAttribute="leading" id="tfx-wQ-epq"/>
                             <constraint firstItem="2zv-1H-QS5" firstAttribute="top" secondItem="0Re-Y6-bYo" secondAttribute="bottom" id="uxK-Ts-Lbl"/>
+                            <constraint firstItem="pVW-Eh-3Vd" firstAttribute="centerY" secondItem="1cT-49-k07" secondAttribute="centerY" id="vWd-wr-LWK"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PartLabel" destination="2zv-1H-QS5" id="2WX-CY-WAG"/>
+                        <outlet property="activityIndicator" destination="pVW-Eh-3Vd" id="ucj-H6-F2y"/>
                         <outlet property="tableView" destination="1Fa-AT-4Y3" id="kXw-Jn-TM7"/>
                     </connections>
                 </viewController>
