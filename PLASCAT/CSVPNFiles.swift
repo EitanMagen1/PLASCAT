@@ -28,6 +28,7 @@ class CSVPNFiles {
         
         return csv
     }
+    
     func searchInFile ( searchText : String, csv : CSwiftV) ->[Data] {
         let charectersNumber = searchText.characters.count
         
@@ -38,14 +39,14 @@ class CSVPNFiles {
             for keyedrow in keyedRows {
                 if keyedrow["Item Number"]!.containsString(searchText) ||  keyedrow["ENG Description"]!.containsString(searchText) ||  keyedrow["HEB Description"]!.containsString(searchText) {
                     
-                    let itemNumber = "Item Number  :\(keyedrow["Item Number"]!) \n"
-                    let engDescription = "English Description  :\(keyedrow["ENG Description"]!) \n"
-                    let statusCode = "Status Code:\(keyedrow["Status Code"]!) \n"
-                    let hebDescription = "Hebrew Description :\(keyedrow["HEB Description"]!) \n"
+                    let itemNumber = "\(keyedrow["Item Number"]!) \n"
+                    let engDescription = "\(keyedrow["ENG Description"]!) \n"
+                    let statusCode = "\(keyedrow["Status Code"]!) \n"
+                    let hebDescription = "\(keyedrow["HEB Description"]!) \n"
                     
                     let tempData = Data()
-                    tempData.itemDescription = itemNumber + statusCode + engDescription + hebDescription
-                    tempData.ItemNumber = "\(keyedrow["Item Number"]!)"
+                    tempData.itemDescription = itemNumber + engDescription + hebDescription + statusCode
+                    tempData.ItemNumber = "\(keyedrow["Item Number"]!) \n"
                     dataArray.append(tempData)
                     
                 }

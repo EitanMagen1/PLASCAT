@@ -125,6 +125,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     
     // transfer the data found to the next view controller search in BOM file
     var tempDataPicked = Data()
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueToBOM" {
             let vc : BOMViewController = segue.destinationViewController as! BOMViewController
@@ -169,7 +170,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         cell.textLabel!.numberOfLines = 0;
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
-    func presentError(alertString: String){
+    override func presentError(alertString: String){
         // self.ActivityIndicator.stopAnimating()
         let ac = UIAlertController(title: "Error", message: alertString, preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))

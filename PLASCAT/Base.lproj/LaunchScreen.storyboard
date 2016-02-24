@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,73 +17,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLASSON LUL CATALOG SEARCH ENGINE " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqG-u6-2Qo">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plasson_broiler_2" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-7Y-eqZ">
-                                <rect key="frame" x="90" y="222" width="420" height="280"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dsy-Km-fNu">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLASSON LUL CATALOG SEARCH ENGINE " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqG-u6-2Qo">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="oh1-T8-awH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="193"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="plasson_broiler_2" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-7Y-eqZ">
+                                        <rect key="frame" x="0.0" y="150" width="600" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="350" id="TsM-F5-l17"/>
+                                        </constraints>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="193" width="400" height="194"/>
+                                        </variation>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="250" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oVl-XN-okk">
+                                        <rect key="frame" x="0.0" y="500" width="600" height="80"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich4" translatesAutoresizingMaskIntoConstraints="NO" id="16b-i5-YAv">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="80"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="193"/>
+                                                </variation>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich1" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-su-lNx">
+                                                <rect key="frame" x="200" y="0.0" width="200" height="80"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich3" translatesAutoresizingMaskIntoConstraints="NO" id="XkE-su-0PP">
+                                                <rect key="frame" x="400" y="0.0" width="200" height="80"/>
+                                                <variation key="widthClass=compact" misplaced="YES">
+                                                    <rect key="frame" x="200" y="0.0" width="200" height="193"/>
+                                                </variation>
+                                            </imageView>
+                                        </subviews>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="387" width="400" height="193"/>
+                                        </variation>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="NyT-7Y-eqZ" firstAttribute="trailing" secondItem="hqG-u6-2Qo" secondAttribute="trailing" id="8A6-FT-eJP"/>
-                            <constraint firstAttribute="trailing" secondItem="NyT-7Y-eqZ" secondAttribute="trailing" id="CPQ-a2-yX1"/>
-                            <constraint firstItem="NyT-7Y-eqZ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="EvG-Qd-p0g"/>
-                            <constraint firstItem="NyT-7Y-eqZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="70" id="SOY-P3-ciZ">
-                                <variation key="widthClass=compact" constant="-20"/>
-                            </constraint>
-                            <constraint firstItem="NyT-7Y-eqZ" firstAttribute="top" secondItem="hqG-u6-2Qo" secondAttribute="bottom" constant="35" id="Wpk-qi-eoe"/>
-                            <constraint firstItem="NyT-7Y-eqZ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cfx-aA-7nS"/>
-                            <constraint firstItem="NyT-7Y-eqZ" firstAttribute="leading" secondItem="hqG-u6-2Qo" secondAttribute="leading" id="fge-b4-82E"/>
-                            <constraint firstItem="hqG-u6-2Qo" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="49" id="gg6-DI-ut4"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NyT-7Y-eqZ" secondAttribute="bottom" constant="151" id="oJj-ym-HV9"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="NyT-7Y-eqZ" secondAttribute="bottom" constant="98" id="s5H-fi-hft">
-                                <variation key="widthClass=compact" constant="0.0"/>
-                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="dsy-Km-fNu" secondAttribute="bottom" id="62Z-OG-4x7"/>
+                            <constraint firstItem="dsy-Km-fNu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="BkL-NE-re9"/>
+                            <constraint firstAttribute="trailing" secondItem="dsy-Km-fNu" secondAttribute="trailing" id="KUn-1C-aNo"/>
+                            <constraint firstItem="dsy-Km-fNu" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="av0-ba-AE4"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="hqG-u6-2Qo"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="gg6-DI-ut4"/>
-                                <exclude reference="8A6-FT-eJP"/>
-                                <exclude reference="CPQ-a2-yX1"/>
-                                <exclude reference="EvG-Qd-p0g"/>
-                                <exclude reference="Wpk-qi-eoe"/>
-                                <exclude reference="cfx-aA-7nS"/>
-                                <exclude reference="fge-b4-82E"/>
-                                <exclude reference="oJj-ym-HV9"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="hqG-u6-2Qo"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="gg6-DI-ut4"/>
-                                <include reference="8A6-FT-eJP"/>
-                                <include reference="CPQ-a2-yX1"/>
-                                <include reference="EvG-Qd-p0g"/>
-                                <exclude reference="SOY-P3-ciZ"/>
-                                <include reference="Wpk-qi-eoe"/>
-                                <include reference="cfx-aA-7nS"/>
-                                <include reference="fge-b4-82E"/>
-                                <include reference="oJj-ym-HV9"/>
-                                <exclude reference="s5H-fi-hft"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="255"/>
+            <point key="canvasLocation" x="39" y="251"/>
         </scene>
     </scenes>
     <resources>
+        <image name="chich1" width="700" height="700"/>
+        <image name="chich3" width="700" height="392"/>
+        <image name="chich4" width="552" height="640"/>
         <image name="plasson_broiler_2" width="250" height="228"/>
     </resources>
 </document>

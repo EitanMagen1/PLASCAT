@@ -22,6 +22,7 @@
 		460409871C669BA70045BCFB /* PLS_LUL.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409861C669BA70045BCFB /* PLS_LUL.csv */; };
 		460409891C6732490045BCFB /* CSVBOMFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409881C6732490045BCFB /* CSVBOMFiles.swift */; };
 		464BC6601C68BD530098594B /* bomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC65F1C68BD530098594B /* bomTableViewCell.swift */; };
+		465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88CB1C7C4CE1005E1765 /* error handeling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		460409861C669BA70045BCFB /* PLS_LUL.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL.csv; sourceTree = "<group>"; };
 		460409881C6732490045BCFB /* CSVBOMFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVBOMFiles.swift; sourceTree = "<group>"; };
 		464BC65F1C68BD530098594B /* bomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = bomTableViewCell.swift; path = ../bomTableViewCell.swift; sourceTree = "<group>"; };
+		465D88CB1C7C4CE1005E1765 /* error handeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "error handeling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				460409841C6495E30045BCFB /* CSwiftV.swift */,
+				465D88CB1C7C4CE1005E1765 /* error handeling.swift */,
 				4604097F1C6394360045BCFB /* CSVPNFiles.swift */,
 				460409881C6732490045BCFB /* CSVBOMFiles.swift */,
 				460409861C669BA70045BCFB /* PLS_LUL.csv */,
@@ -324,6 +327,7 @@
 				460409801C6394360045BCFB /* CSVPNFiles.swift in Sources */,
 				460409741C5F52640045BCFB /* BOMViewController.swift in Sources */,
 				460409851C6495E30045BCFB /* CSwiftV.swift in Sources */,
+				465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

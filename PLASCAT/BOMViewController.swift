@@ -11,16 +11,20 @@ import UIKit
 let CellReuseIdBOM = "bomCell"
 
 class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDelegate  {
-
+    
     static let sheredInstance = BOMViewController()
-
+    @IBOutlet weak var PartLabel: UILabel!
+    // The data for the table.
+    var ItemPassed : Data!
+    var ItemBOM = [Data]()
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidden = false
-           }
+    }
     
     override func viewDidAppear(animated : Bool ) {
         super.viewDidAppear(true)
@@ -28,15 +32,16 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         tableView?.reloadData()
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
+        self.presentMessege("\(ItemBOM.count - 1) Items")
 
+        
     }
     
-    @IBOutlet weak var PartLabel: UILabel!
-    
-    // The data for the table.
-    var ItemPassed : Data!
-    
-    var ItemBOM = [Data]()
+    func presentMessege(alertString: String){
+        let ac = UIAlertController(title: "Assembly Contains :\n ", message: alertString, preferredStyle: .ActionSheet )
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
+        self.presentViewController(ac, animated: true, completion: nil)
+    }
 
     
     // MARK: - Table View Delegate and Data Source
@@ -47,14 +52,14 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdBOM , forIndexPath: indexPath) as! bomTableViewCell
         cell.accessoryType = .DetailDisclosureButton
         
-       // cell.shareButton.tag = indexPath.row;
-       // cell.shareButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
+        // cell.shareButton.tag = indexPath.row;
+        // cell.shareButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
         configureCell(cell, data: dataFound)
         
         return cell
     }
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-       
+        
         let titleString = ItemBOM[indexPath.row].itemDescription
         
         let firstActivityItem = "\(titleString)"
@@ -62,7 +67,7 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [firstActivityItem], applicationActivities: nil)
         
         self.presentViewController(activityViewController, animated: true, completion: nil)
-
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -104,5 +109,5 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
     }
     
-
+    
 }
