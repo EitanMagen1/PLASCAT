@@ -12,18 +12,23 @@ import UIKit
 class CSVBOMFiles  {
     static let sheredInstance = CSVBOMFiles()
     var error: NSErrorPointer = nil
-    
+    let BOMFile = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL_BOM.csv")
     // open the file functions
+    
     func openBOMFile()-> CSwiftV {
         var rawInputString = ""
         // start searching only after the PN was entered corectly or more then 3 leters were entered
+
         let url = NSBundle.mainBundle().URLForResource( "PLS_LUL_BOM", withExtension: "csv")!
+
         do {
             rawInputString = try String( contentsOfURL: url, encoding: NSUTF8StringEncoding)
-
+           
         } catch let error as NSError {
             print("Error=", error)
         }
+        
+        
         let inputString = rawInputString.substringFromIndex(rawInputString.startIndex.advancedBy(110))
         
         let csv = CSwiftV(String: inputString)
@@ -31,10 +36,10 @@ class CSVBOMFiles  {
         return csv
     }
     
-    func searchInFile ( searchText : String, csv : CSwiftV) ->[Data] {
+    func searchInFile ( searchText : String, csv : CSwiftV , charectersToSkip : Int) ->[Data] {
         let charectersNumber = searchText.characters.count
         var dataArray = [Data]()
-        if  charectersNumber > 2 {
+        if  charectersNumber > charectersToSkip {
             
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             var assemblyNumber = ""
@@ -100,31 +105,38 @@ class CSVBOMFiles  {
         var engDescription = ""
         var statusCode = ""
         var hebDescription = ""
+        var counter = 0
        var UsePLSAsExitPoint = false
         for keyedrow in keyedRows {
             //goes over all of the assemblies
             if keyedrow["Assembly Number"] == searchText && UsePLSAsExitPoint == false {
+                counter == 0
                 assemblyNumber = "\(keyedrow["Assembly Number"]!) \n"
                 engDescription = "\(keyedrow["Assembly Description"]!) \n"
                 statusCode = "\(keyedrow["Assembly Status Code"]!) \n"
                 hebDescription = "\(keyedrow["Assembly Hebrew Description"]!) \n"
                 let tempData = Data()
-                tempData.itemDescription = " The Assembly searched is :" + assemblyNumber + engDescription + hebDescription + statusCode
-                dataArray.append(tempData)
+                tempData.itemDescription = assemblyNumber + engDescription + hebDescription + statusCode
+                //dataArray.append(tempData)
                 UsePLSAsExitPoint = true
             }
 
             if UsePLSAsExitPoint == true {
-                if keyedrow["ORG"] == "PLS" {
+                if ( keyedrow["ORG"] == "MST" || keyedrow["ORG"] == "PLS" ) &&   counter > 0 {
                     break
                 }
-                let itemNumber = "\(keyedrow["Component Number"]!) \n"
+                counter++
                 let engDescription = "\(keyedrow["Component Description"]!) \n"
                 let hebDescription = "\(keyedrow["Component Hebrew Description"]!) \n"
+                let QTY = "QTY : \(keyedrow["Component Quantity"]!) "
+                let itemNumber = "\(keyedrow["Component Number"]!)   ,   " + QTY + "\n"
+
+
                 let tempData = Data()
                 tempData.itemDescription = itemNumber + engDescription + hebDescription
                 dataArray.append(tempData)
             }
+            
         }
 
         if dataArray == [] {

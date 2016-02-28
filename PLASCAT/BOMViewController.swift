@@ -20,6 +20,7 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var headerLable: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
@@ -32,17 +33,17 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         tableView?.reloadData()
         activityIndicator.stopAnimating()
         activityIndicator.hidden = true
-        self.presentMessege("\(ItemBOM.count - 1) Items")
-
+        //self.presentMessege("\(ItemBOM.count - 1) Items")
+        headerLable.text = "Assembly " + ItemPassed!.ItemNumber + " Contains \(ItemBOM.count) Items"
         
     }
-    
+    /*
     func presentMessege(alertString: String){
-        let ac = UIAlertController(title: "Assembly Contains :\n ", message: alertString, preferredStyle: .ActionSheet )
+        let ac = UIAlertController(title: "Assembly Contains :\n \(alertString)", message: "", preferredStyle: .Alert )
         ac.addAction(UIAlertAction(title: "Dismiss", style: .Default, handler: nil))
         self.presentViewController(ac, animated: true, completion: nil)
     }
-
+    */
     
     // MARK: - Table View Delegate and Data Source
     
@@ -52,12 +53,11 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier(CellReuseIdBOM , forIndexPath: indexPath) as! bomTableViewCell
         cell.accessoryType = .DetailDisclosureButton
         
-        // cell.shareButton.tag = indexPath.row;
-        // cell.shareButton.addTarget(self, action: "logAction:", forControlEvents: .TouchUpInside)
         configureCell(cell, data: dataFound)
         
         return cell
     }
+    
     func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
         
         let titleString = ItemBOM[indexPath.row].itemDescription
@@ -84,7 +84,6 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
         tableView.beginUpdates()
         tableView.endUpdates()
         
-        //self.dismissViewControllerAnimated(true, completion: nil)
     }
     //expand and contract the cell view method part 3 : toogle shrink and expand
     
@@ -100,8 +99,8 @@ class BOMViewController: UIViewController , UITableViewDataSource ,UITableViewDe
     
     // cell data all in one place , expands the number of text lines to grow with the cell
     func configureCell(cell: UITableViewCell, data: Data) {
-        cell.layer.cornerRadius = cell.frame.width / 12
-        cell.clipsToBounds = true
+       cell.layer.cornerRadius = cell.frame.width / 12
+       cell.clipsToBounds = true
         cell.textLabel!.text = data.itemDescription
         
         // expend the number of text lines to fit the larger screen

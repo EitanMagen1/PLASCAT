@@ -14,26 +14,29 @@ let CellReuseId = "SearchCell"
 
 let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 let csvLUL = CSVPNFiles.sheredInstance.openLULFile()
-
+//let csvBOM = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL_BOM.csv")
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     static let sheredInstance = SearchViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  self.ActivityIndicator.hidden = true
+       
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
         self.searchBar.becomeFirstResponder()
-        
+    
     }
+    
+    
+    
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var searchBar : UISearchBar!
-    @IBOutlet weak var ActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var SegmentedPNOrAssembly: UISegmentedControl!
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
@@ -53,60 +56,57 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     // The data for the table.
     var dataArray = [Data]()
     
-    var searchTask: NSURLSessionDataTask?
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        let data = searchBar.text!
+        let charectersToSkip = 0
+        SearchTheData(data , charectersToSkip: charectersToSkip)
+    }
     
     // MARK: - Search Bar Delegate
-    
+  
     // Each time the search text changes we want to cancel any current download and start a new one
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        self.ActivityIndicator.hidden = false
-        self.ActivityIndicator.startAnimating()
+    let charectersToSkip = 6
+     SearchTheData(searchText , charectersToSkip: charectersToSkip)
+
+    }
+    
+    func SearchTheData (searchText : String , charectersToSkip : Int){
         // Cancel the last task
-        if let task = searchTask {
-            task.cancel()
-            
-            return
-        }
+        
+        
+        
         // If the text is empty we are done
         if searchText == "" {
-            // self.ActivityIndicator.hidden = true
-            //  self.ActivityIndicator.stopAnimating()
             dataArray = [Data]()
             tableView?.reloadData()
             objc_sync_exit(self)
             return
         }
         
-        // Start a new one download
+        // Start a new search
         dispatch_async(dispatch_get_main_queue()) {
-            print("\(searchText)")
             
             let searchTextCapital = searchText.uppercaseString
             let searchTextNoLeadingZero = self.trimLeadingZeroes(searchTextCapital)
+            //search for prts in the small table
             if self.SegmentedPNOrAssembly.selectedSegmentIndex == 0 {
-                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvLUL)
+                self.dataArray = CSVPNFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvLUL , charectersToSkip : charectersToSkip)
+                // search for BOM in the large table
             }else if self.SegmentedPNOrAssembly.selectedSegmentIndex == 1 {
-                self.dataArray = CSVBOMFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvBOM)
+                self.dataArray = CSVBOMFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvBOM  , charectersToSkip : charectersToSkip)
             }
             self.tableView!.reloadData()
-            self.ActivityIndicator.stopAnimating()
-            self.ActivityIndicator.hidden = true
-            
-            
+           // let firstIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+           // self.tableView.selectRowAtIndexPath(firstIndexPath, animated: true, scrollPosition: .Top )
         }
-        
-    }
-    
-    
-    
-    //******
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
-        
+
     }
     // MARK: - Table View Delegate and Data Source
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let dataFound = dataArray[indexPath.row]
         
@@ -120,8 +120,6 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
-    //expand and contract the cell view method part 1: define a place o hold the index
-    var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
     
     // transfer the data found to the next view controller search in BOM file
     var tempDataPicked = Data()
@@ -130,9 +128,12 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         if segue.identifier == "segueToBOM" {
             let vc : BOMViewController = segue.destinationViewController as! BOMViewController
             vc.ItemPassed = tempDataPicked
+
         }
     }
-    
+    //expand and contract the cell view method part 1: define a place to hold the index
+    var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataPicked = dataArray[indexPath.row]
         // if the press is the second one
@@ -169,9 +170,10 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         cell.textLabel!.text = data.itemDescription
         cell.textLabel!.numberOfLines = 0;
         cell.textLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        
     }
+    
     override func presentError(alertString: String){
-        // self.ActivityIndicator.stopAnimating()
         let ac = UIAlertController(title: "Error", message: alertString, preferredStyle: .Alert)
         ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         self.presentViewController(ac, animated: true, completion: nil)
