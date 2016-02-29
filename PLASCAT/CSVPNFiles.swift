@@ -15,8 +15,10 @@ class CSVPNFiles {
     // open the file functions
     func openLULFile()-> CSwiftV {
         var rawInputString = ""
-        // start searching only after the PN was entered corectly or more then 3 leters were entered
-        let url = NSBundle.mainBundle().URLForResource( "PLS_LUL", withExtension: "csv")!
+        
+        let url = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL.csv")
+
+        //NSBundle.mainBundle().URLForResource( "PLS_LUL", withExtension: "csv")!
         do {
             rawInputString = try String( contentsOfURL: url, encoding: NSUTF8StringEncoding)
         } catch let error as NSError {

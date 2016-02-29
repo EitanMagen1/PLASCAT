@@ -22,10 +22,10 @@ class Client {
     }
     
     
-    func updatingFilesFromServer(fileTypeToDowload : String) -> AnyObject{
+    func updatingFilesFromServer(fileTypeToDowload : String) -> NSData{
         
         var components = NSURLComponents()
-        var dataRecived : AnyObject = 0
+        var dataRecived = NSData()
         
         if fileTypeToDowload == "BaseURLForBOMFile" {
         components = NSURLComponents(string: downloadConstants.URLConstants.BaseURLForBOMFile)!

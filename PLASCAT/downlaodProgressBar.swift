@@ -12,7 +12,7 @@ class downlaodProgressBar: UIViewController {
     
     let formatter = NSDateFormatter()
     let date = NSDate()
-
+    
     @IBOutlet weak var updatedDateLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
     
@@ -32,9 +32,26 @@ class downlaodProgressBar: UIViewController {
         let FileForBOM = Client().updatingFilesFromServer("BaseURLForBOMFile")
         let FileForLUL = Client().updatingFilesFromServer("BaseURLForLULFile")
         
-        NSUserDefaults.standardUserDefaults().setObject(FileForBOM, forKey: "PLS_LUL_BOM.csv")
-        NSUserDefaults.standardUserDefaults().setObject(FileForLUL, forKey: "PLS_LUL.csv")
+        // NSURL of the documents directory on the device
+        let documentsURL = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)[0]
+        //pinpoint a file in the documents directory
+        let fileURLBOM = documentsURL.URLByAppendingPathComponent("PLS_LUL_BOM.csv")
+        let fileURLLUL = documentsURL.URLByAppendingPathComponent("PLS_LUL_BOM.csv")
+        
+        //defines the Path
+        let filePathBOM = fileURLBOM.path!
+        let filePathLUL = fileURLLUL.path!
+        
+        // bool if writing was succesfull
+        let resultBOM = FileForBOM.writeToFile(filePathBOM, atomically: true)
+        let resultLUL = FileForLUL.writeToFile(filePathLUL, atomically: true)
+        
+        //get the files back
+        print(resultBOM)
+        
+        NSUserDefaults.standardUserDefaults().setObject(fileURLBOM, forKey: "PLS_LUL_BOM.csv")
+        NSUserDefaults.standardUserDefaults().setObject(fileURLLUL, forKey: "PLS_LUL.csv")
         NSUserDefaults.standardUserDefaults().setObject(updatedDateLabel.text, forKey: "updatedDateLabel.text")
-
+        
     }
 }

@@ -12,13 +12,16 @@ import UIKit
 class CSVBOMFiles  {
     static let sheredInstance = CSVBOMFiles()
     var error: NSErrorPointer = nil
-    let BOMFile = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL_BOM.csv")
     // open the file functions
     
     func openBOMFile()-> CSwiftV {
         var rawInputString = ""
         // start searching only after the PN was entered corectly or more then 3 leters were entered
+        
+        
+        let BOMFile = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL_BOM.csv")
 
+        
         let url = NSBundle.mainBundle().URLForResource( "PLS_LUL_BOM", withExtension: "csv")!
 
         do {
