@@ -25,6 +25,8 @@
 		465D88D31C82F7A3005E1765 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D21C82F7A3005E1765 /* Constants.swift */; };
 		465D88D91C8477B8005E1765 /* statusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D81C8477B8005E1765 /* statusBarViewController.swift */; };
 		465D88DF1C85B898005E1765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465D88DE1C85B898005E1765 /* Assets.xcassets */; };
+		465D88E11C873AC9005E1765 /* PlascatReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 465D88E01C873AC9005E1765 /* PlascatReadMe.txt */; };
+		465D88E31C873B13005E1765 /* PlascatReadMe.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 465D88E21C873B13005E1765 /* PlascatReadMe.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		465D88D21C82F7A3005E1765 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		465D88D81C8477B8005E1765 /* statusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = statusBarViewController.swift; sourceTree = "<group>"; };
 		465D88DE1C85B898005E1765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		465D88E01C873AC9005E1765 /* PlascatReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PlascatReadMe.txt; sourceTree = "<group>"; };
+		465D88E21C873B13005E1765 /* PlascatReadMe.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = PlascatReadMe.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 		460409721C5E358B0045BCFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				465D88E01C873AC9005E1765 /* PlascatReadMe.txt */,
+				465D88E21C873B13005E1765 /* PlascatReadMe.pdf */,
 				465D88CB1C7C4CE1005E1765 /* error handeling.swift */,
 				4604094C1C5A4B570045BCFB /* Info.plist */,
 			);
@@ -306,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */,
+				465D88E31C873B13005E1765 /* PlascatReadMe.pdf in Resources */,
+				465D88E11C873AC9005E1765 /* PlascatReadMe.txt in Resources */,
 				465D88DF1C85B898005E1765 /* Assets.xcassets in Resources */,
 				460409461C5A4B570045BCFB /* Main.storyboard in Resources */,
 			);
