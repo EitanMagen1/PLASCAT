@@ -14,11 +14,12 @@ class CSVPNFiles {
     
     // open the file functions
     func openLULFile()-> CSwiftV {
-        var rawInputString = ""
         
-        let url = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL.csv")
+        var rawInputString = ""
+        var url = NSURL()
+        let FileName = NSUserDefaults.standardUserDefaults().valueForKey("LULFileName")
+        url = FindDucumentInDirectory("\(FileName!)")
 
-        //NSBundle.mainBundle().URLForResource( "PLS_LUL", withExtension: "csv")!
         do {
             rawInputString = try String( contentsOfURL: url, encoding: NSUTF8StringEncoding)
         } catch let error as NSError {
@@ -32,8 +33,8 @@ class CSVPNFiles {
     }
     
     func searchInFile ( searchText : String, csv : CSwiftV , charectersToSkip : Int) ->[Data] {
-        let charectersNumber = searchText.characters.count
         
+        let charectersNumber = searchText.characters.count
         var dataArray = [Data]()
         if  charectersNumber > charectersToSkip {
             

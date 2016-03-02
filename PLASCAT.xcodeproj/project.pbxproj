@@ -10,7 +10,6 @@
 		460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409401C5A4B570045BCFB /* AppDelegate.swift */; };
 		460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409421C5A4B570045BCFB /* SearchViewController.swift */; };
 		460409461C5A4B570045BCFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409441C5A4B570045BCFB /* Main.storyboard */; };
-		460409481C5A4B570045BCFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460409471C5A4B570045BCFB /* Assets.xcassets */; };
 		4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460409491C5A4B570045BCFB /* LaunchScreen.storyboard */; };
 		460409561C5A4B570045BCFB /* PLASCATTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409551C5A4B570045BCFB /* PLASCATTests.swift */; };
 		460409611C5A4B570045BCFB /* PLASCATUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409601C5A4B570045BCFB /* PLASCATUITests.swift */; };
@@ -18,14 +17,14 @@
 		460409761C5FA0870045BCFB /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409751C5FA0870045BCFB /* Data.swift */; };
 		460409801C6394360045BCFB /* CSVPNFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097F1C6394360045BCFB /* CSVPNFiles.swift */; };
 		460409851C6495E30045BCFB /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409841C6495E30045BCFB /* CSwiftV.swift */; };
-		460409871C669BA70045BCFB /* PLS_LUL.csv in Resources */ = {isa = PBXBuildFile; fileRef = 460409861C669BA70045BCFB /* PLS_LUL.csv */; };
 		460409891C6732490045BCFB /* CSVBOMFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409881C6732490045BCFB /* CSVBOMFiles.swift */; };
 		464BC6601C68BD530098594B /* bomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC65F1C68BD530098594B /* bomTableViewCell.swift */; };
 		465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88CB1C7C4CE1005E1765 /* error handeling.swift */; };
 		465D88CE1C7F0DF0005E1765 /* downlaodProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */; };
 		465D88D11C82F6CE005E1765 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D01C82F6CE005E1765 /* Client.swift */; };
 		465D88D31C82F7A3005E1765 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D21C82F7A3005E1765 /* Constants.swift */; };
-		465D88D71C835462005E1765 /* PLS_LUL_BOM.csv in Resources */ = {isa = PBXBuildFile; fileRef = 465D88D61C835462005E1765 /* PLS_LUL_BOM.csv */; };
+		465D88D91C8477B8005E1765 /* statusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D81C8477B8005E1765 /* statusBarViewController.swift */; };
+		465D88DF1C85B898005E1765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465D88DE1C85B898005E1765 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +49,6 @@
 		460409401C5A4B570045BCFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		460409421C5A4B570045BCFB /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		460409451C5A4B570045BCFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		460409471C5A4B570045BCFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4604094A1C5A4B570045BCFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4604094C1C5A4B570045BCFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		460409511C5A4B570045BCFB /* PLASCATTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PLASCATTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,14 +61,14 @@
 		460409751C5FA0870045BCFB /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		4604097F1C6394360045BCFB /* CSVPNFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVPNFiles.swift; sourceTree = "<group>"; };
 		460409841C6495E30045BCFB /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
-		460409861C669BA70045BCFB /* PLS_LUL.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL.csv; sourceTree = "<group>"; };
 		460409881C6732490045BCFB /* CSVBOMFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVBOMFiles.swift; sourceTree = "<group>"; };
 		464BC65F1C68BD530098594B /* bomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = bomTableViewCell.swift; path = ../bomTableViewCell.swift; sourceTree = "<group>"; };
 		465D88CB1C7C4CE1005E1765 /* error handeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "error handeling.swift"; sourceTree = "<group>"; };
 		465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = downlaodProgressBar.swift; sourceTree = "<group>"; };
 		465D88D01C82F6CE005E1765 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		465D88D21C82F7A3005E1765 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		465D88D61C835462005E1765 /* PLS_LUL_BOM.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PLS_LUL_BOM.csv; sourceTree = "<group>"; };
+		465D88D81C8477B8005E1765 /* statusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = statusBarViewController.swift; sourceTree = "<group>"; };
+		465D88DE1C85B898005E1765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +124,7 @@
 				460409771C5FA0960045BCFB /* Data Base */,
 				460409401C5A4B570045BCFB /* AppDelegate.swift */,
 				460409441C5A4B570045BCFB /* Main.storyboard */,
-				460409471C5A4B570045BCFB /* Assets.xcassets */,
+				465D88DE1C85B898005E1765 /* Assets.xcassets */,
 				460409491C5A4B570045BCFB /* LaunchScreen.storyboard */,
 				4604097E1C6393D00045BCFB /* CSV */,
 				460409721C5E358B0045BCFB /* Supporting Files */,
@@ -155,6 +153,7 @@
 		460409721C5E358B0045BCFB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				465D88CB1C7C4CE1005E1765 /* error handeling.swift */,
 				4604094C1C5A4B570045BCFB /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -172,12 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				460409841C6495E30045BCFB /* CSwiftV.swift */,
-				465D88CB1C7C4CE1005E1765 /* error handeling.swift */,
 				4604097F1C6394360045BCFB /* CSVPNFiles.swift */,
-				465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */,
 				460409881C6732490045BCFB /* CSVBOMFiles.swift */,
-				460409861C669BA70045BCFB /* PLS_LUL.csv */,
-				465D88D61C835462005E1765 /* PLS_LUL_BOM.csv */,
+				465D88D81C8477B8005E1765 /* statusBarViewController.swift */,
 			);
 			name = CSV;
 			sourceTree = "<group>";
@@ -187,7 +183,7 @@
 			children = (
 				460409421C5A4B570045BCFB /* SearchViewController.swift */,
 				460409731C5F52640045BCFB /* BOMViewController.swift */,
-				464BC65F1C68BD530098594B /* bomTableViewCell.swift */,
+				465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */,
 			);
 			name = ViewControler;
 			sourceTree = "<group>";
@@ -197,6 +193,7 @@
 			children = (
 				465D88D01C82F6CE005E1765 /* Client.swift */,
 				465D88D21C82F7A3005E1765 /* Constants.swift */,
+				464BC65F1C68BD530098594B /* bomTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -308,10 +305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				465D88D71C835462005E1765 /* PLS_LUL_BOM.csv in Resources */,
-				460409871C669BA70045BCFB /* PLS_LUL.csv in Resources */,
 				4604094B1C5A4B570045BCFB /* LaunchScreen.storyboard in Resources */,
-				460409481C5A4B570045BCFB /* Assets.xcassets in Resources */,
+				465D88DF1C85B898005E1765 /* Assets.xcassets in Resources */,
 				460409461C5A4B570045BCFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +340,7 @@
 				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
 				460409801C6394360045BCFB /* CSVPNFiles.swift in Sources */,
 				460409741C5F52640045BCFB /* BOMViewController.swift in Sources */,
+				465D88D91C8477B8005E1765 /* statusBarViewController.swift in Sources */,
 				460409851C6495E30045BCFB /* CSwiftV.swift in Sources */,
 				465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,

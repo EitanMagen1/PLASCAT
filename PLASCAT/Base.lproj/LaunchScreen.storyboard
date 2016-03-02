@@ -28,41 +28,26 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="400" height="193"/>
-                                        </variation>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" image="plasson_broiler_2" translatesAutoresizingMaskIntoConstraints="NO" id="NyT-7Y-eqZ">
                                         <rect key="frame" x="0.0" y="150" width="600" height="350"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="350" id="TsM-F5-l17"/>
                                         </constraints>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="193" width="400" height="194"/>
-                                        </variation>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="250" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oVl-XN-okk">
                                         <rect key="frame" x="0.0" y="500" width="600" height="80"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich4" translatesAutoresizingMaskIntoConstraints="NO" id="16b-i5-YAv">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="80"/>
-                                                <variation key="widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="193"/>
-                                                </variation>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich1" translatesAutoresizingMaskIntoConstraints="NO" id="DF8-su-lNx">
                                                 <rect key="frame" x="200" y="0.0" width="200" height="80"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich3" translatesAutoresizingMaskIntoConstraints="NO" id="XkE-su-0PP">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chich2" translatesAutoresizingMaskIntoConstraints="NO" id="XkE-su-0PP">
                                                 <rect key="frame" x="400" y="0.0" width="200" height="80"/>
-                                                <variation key="widthClass=compact" misplaced="YES">
-                                                    <rect key="frame" x="200" y="0.0" width="200" height="193"/>
-                                                </variation>
                                             </imageView>
                                         </subviews>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="387" width="400" height="193"/>
-                                        </variation>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -83,7 +68,7 @@
     </scenes>
     <resources>
         <image name="chich1" width="700" height="700"/>
-        <image name="chich3" width="700" height="392"/>
+        <image name="chich2" width="159" height="225"/>
         <image name="chich4" width="552" height="640"/>
         <image name="plasson_broiler_2" width="250" height="228"/>
     </resources>

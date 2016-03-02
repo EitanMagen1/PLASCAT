@@ -11,16 +11,25 @@ import Foundation
 
 let CellReuseId = "SearchCell"
 //open the files get ready for search
-
+let firstTimeAppUsed = Bool()
 let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 let csvLUL = CSVPNFiles.sheredInstance.openLULFile()
-//let csvBOM = NSUserDefaults.standardUserDefaults().valueForKey("PLS_LUL_BOM.csv")
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
+
     static let sheredInstance = SearchViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //checks if data exists if so work with it , else download
+        if NSUserDefaults.standardUserDefaults().boolForKey("DataExists") {
+
+        //calling the files to be loaded to memory  for faster search later
+        print(csvBOM.columnCount)
+        print(csvLUL.columnCount)
+        }else {
+            downlaodProgressBar().downloadFiles()
+        }
        
     }
     
@@ -28,15 +37,12 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         super.viewDidAppear(animated)
         
         self.searchBar.becomeFirstResponder()
-    
+        
     }
-    
-    
-    
+  
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var searchBar : UISearchBar!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var SegmentedPNOrAssembly: UISegmentedControl!
     
     @IBAction func indexChanged(sender: UISegmentedControl) {
@@ -67,18 +73,16 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
     
     // MARK: - Search Bar Delegate
-  
+    
     // Each time the search text changes we want to cancel any current download and start a new one
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-    let charectersToSkip = 6
-     SearchTheData(searchText , charectersToSkip: charectersToSkip)
-
+        let charectersToSkip = 6
+        SearchTheData(searchText , charectersToSkip: charectersToSkip)
+        
     }
     
     func SearchTheData (searchText : String , charectersToSkip : Int){
         // Cancel the last task
-        
-        
         
         // If the text is empty we are done
         if searchText == "" {
@@ -101,10 +105,10 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
                 self.dataArray = CSVBOMFiles.sheredInstance.searchInFile(searchTextNoLeadingZero, csv: csvBOM  , charectersToSkip : charectersToSkip)
             }
             self.tableView!.reloadData()
-           // let firstIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-           // self.tableView.selectRowAtIndexPath(firstIndexPath, animated: true, scrollPosition: .Top )
+            // let firstIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+            // self.tableView.selectRowAtIndexPath(firstIndexPath, animated: true, scrollPosition: .Top )
         }
-
+        
     }
     // MARK: - Table View Delegate and Data Source
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -128,12 +132,12 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         if segue.identifier == "segueToBOM" {
             let vc : BOMViewController = segue.destinationViewController as! BOMViewController
             vc.ItemPassed = tempDataPicked
-
+            
         }
     }
     //expand and contract the cell view method part 1: define a place to hold the index
     var selectedRowIndex: NSIndexPath = NSIndexPath(forRow: -1, inSection: 0)
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let dataPicked = dataArray[indexPath.row]
         // if the press is the second one

@@ -20,12 +20,12 @@ class Client {
     init() {
         session = NSURLSession.sharedSession()
     }
-    
-    
-    func updatingFilesFromServer(fileTypeToDowload : String) -> NSData{
+
+
+    func updatingFilesFromServer(fileTypeToDowload : String , completionHandelerForDowloadingFiles : (result : NSData!, error :NSError?)-> Void) -> NSURLSessionDataTask{
         
         var components = NSURLComponents()
-        var dataRecived = NSData()
+        //var dataRecived = NSData()
         
         if fileTypeToDowload == "BaseURLForBOMFile" {
         components = NSURLComponents(string: downloadConstants.URLConstants.BaseURLForBOMFile)!
@@ -38,6 +38,8 @@ class Client {
             /* GUARD: Was there an error? */
             guard (error == nil) else {
                 print("There was an error with your request: \(error)")
+                completionHandelerForDowloadingFiles(result: nil, error: error )
+
                 return
             }
             
@@ -47,6 +49,8 @@ class Client {
                     print("Your request returned an invalid response! Status code: \(response.statusCode)!")
                 } else if let response = response {
                     print("Your request returned an invalid response! Response: \(response)!")
+                    completionHandelerForDowloadingFiles(result: nil, error: response as? NSError )
+
                     
                 } else {
                     print("Your request returned an invalid response!")
@@ -59,12 +63,12 @@ class Client {
                 print("No data was returned by the request!")
                 return
             }
-            dataRecived = data
+            //dataRecived = data
             print("downlaoded the data succefuly ")
-
+            completionHandelerForDowloadingFiles(result: data, error: nil)
         }
         task.resume()
-        return  dataRecived
+        return task //dataRecived
     }
     
     
