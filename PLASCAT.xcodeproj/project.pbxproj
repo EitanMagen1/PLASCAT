@@ -18,7 +18,6 @@
 		460409801C6394360045BCFB /* CSVPNFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4604097F1C6394360045BCFB /* CSVPNFiles.swift */; };
 		460409851C6495E30045BCFB /* CSwiftV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409841C6495E30045BCFB /* CSwiftV.swift */; };
 		460409891C6732490045BCFB /* CSVBOMFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460409881C6732490045BCFB /* CSVBOMFiles.swift */; };
-		464BC6601C68BD530098594B /* bomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464BC65F1C68BD530098594B /* bomTableViewCell.swift */; };
 		465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88CB1C7C4CE1005E1765 /* error handeling.swift */; };
 		465D88CE1C7F0DF0005E1765 /* downlaodProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */; };
 		465D88D11C82F6CE005E1765 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D01C82F6CE005E1765 /* Client.swift */; };
@@ -26,6 +25,7 @@
 		465D88D91C8477B8005E1765 /* statusBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88D81C8477B8005E1765 /* statusBarViewController.swift */; };
 		465D88DF1C85B898005E1765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465D88DE1C85B898005E1765 /* Assets.xcassets */; };
 		465D88E51C882BEB005E1765 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E41C882BEB005E1765 /* README.md */; };
+		465D88E71C882CF6005E1765 /* bomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E61C882CF6005E1765 /* bomTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +63,6 @@
 		4604097F1C6394360045BCFB /* CSVPNFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVPNFiles.swift; sourceTree = "<group>"; };
 		460409841C6495E30045BCFB /* CSwiftV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSwiftV.swift; sourceTree = "<group>"; };
 		460409881C6732490045BCFB /* CSVBOMFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVBOMFiles.swift; sourceTree = "<group>"; };
-		464BC65F1C68BD530098594B /* bomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = bomTableViewCell.swift; path = ../bomTableViewCell.swift; sourceTree = "<group>"; };
 		465D88CB1C7C4CE1005E1765 /* error handeling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "error handeling.swift"; sourceTree = "<group>"; };
 		465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = downlaodProgressBar.swift; sourceTree = "<group>"; };
 		465D88D01C82F6CE005E1765 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		465D88D81C8477B8005E1765 /* statusBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = statusBarViewController.swift; sourceTree = "<group>"; };
 		465D88DE1C85B898005E1765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		465D88E41C882BEB005E1765 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		465D88E61C882CF6005E1765 /* bomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bomTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,7 +196,7 @@
 			children = (
 				465D88D01C82F6CE005E1765 /* Client.swift */,
 				465D88D21C82F7A3005E1765 /* Constants.swift */,
-				464BC65F1C68BD530098594B /* bomTableViewCell.swift */,
+				465D88E61C882CF6005E1765 /* bomTableViewCell.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -338,7 +338,6 @@
 				465D88CE1C7F0DF0005E1765 /* downlaodProgressBar.swift in Sources */,
 				460409431C5A4B570045BCFB /* SearchViewController.swift in Sources */,
 				460409891C6732490045BCFB /* CSVBOMFiles.swift in Sources */,
-				464BC6601C68BD530098594B /* bomTableViewCell.swift in Sources */,
 				465D88D11C82F6CE005E1765 /* Client.swift in Sources */,
 				460409411C5A4B570045BCFB /* AppDelegate.swift in Sources */,
 				460409801C6394360045BCFB /* CSVPNFiles.swift in Sources */,
@@ -347,6 +346,7 @@
 				460409851C6495E30045BCFB /* CSwiftV.swift in Sources */,
 				465D88E51C882BEB005E1765 /* README.md in Sources */,
 				465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */,
+				465D88E71C882CF6005E1765 /* bomTableViewCell.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
 				465D88D31C82F7A3005E1765 /* Constants.swift in Sources */,
 			);
