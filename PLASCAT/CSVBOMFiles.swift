@@ -40,10 +40,11 @@ class CSVBOMFiles  {
     }
     
     func searchInFile ( searchText : String, csv : CSwiftV , charectersToSkip : Int) ->[Data] {
+
         let charectersNumber = searchText.characters.count
         var dataArray = [Data]()
         if  charectersNumber > charectersToSkip {
-            
+            searchArray.append(searchText)
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             var assemblyNumber = ""
             var assemblyNumberOnly = ""

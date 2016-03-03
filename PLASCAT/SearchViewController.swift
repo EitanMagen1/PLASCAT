@@ -14,11 +14,12 @@ let CellReuseId = "SearchCell"
 let firstTimeAppUsed = Bool()
 let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 let csvLUL = CSVPNFiles.sheredInstance.openLULFile()
+var searchArray : [String] = []
+
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
 
     static let sheredInstance = SearchViewController()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //checks if data exists if so work with it , else download
@@ -39,7 +40,17 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         self.searchBar.becomeFirstResponder()
         
     }
-  
+    
+    var SearchFromHistoryTable : Bool = false
+    var SearchPreference : String = ""
+    
+    override func viewWillAppear(animated: Bool) {
+        if SearchFromHistoryTable {
+            searchBar.text! = SearchPreference
+            SearchTheData(SearchPreference, charectersToSkip: 0)
+            SearchFromHistoryTable = false
+        }
+    }
     
     @IBOutlet weak var tableView : UITableView!
     @IBOutlet weak var searchBar : UISearchBar!
@@ -82,7 +93,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
     
     func SearchTheData (searchText : String , charectersToSkip : Int){
-        // Cancel the last task
+        
         
         // If the text is empty we are done
         if searchText == "" {
@@ -191,24 +202,9 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         return result
     }
     
-    // MARK: - Sample Data
-    
-    // Some sample data. This is a dictionary that is more or less similar to the
-    // JSON data that you will download from Parse.
-    /*   func processAndAppendSampleData ()
-    {
-    let itemsData = hardCodedItemsData()
-    for dictionary in itemsData {
-    let ItemDescription = dictionary["ItemDescription"] as! String
-    let tempData = Data()
-    tempData.itemDescription = ItemDescription
-    dataArray.append(tempData)
-    }
-    } */
-    
-    /* func hardCodedItemsData() -> [[String : AnyObject]] {
-    return  [[ "ItemDescription" : "Jessica-Plasson" ],["ItemDescription" : "Gabrielle- mines."],["ItemDescription" : "Libi-Plasson mines."]]
-    }*/
+    // MARK: - Drop Down Menu
+
+
     
 }
 

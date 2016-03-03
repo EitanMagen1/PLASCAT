@@ -26,6 +26,7 @@
 		465D88DF1C85B898005E1765 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 465D88DE1C85B898005E1765 /* Assets.xcassets */; };
 		465D88E51C882BEB005E1765 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E41C882BEB005E1765 /* README.md */; };
 		465D88E71C882CF6005E1765 /* bomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E61C882CF6005E1765 /* bomTableViewCell.swift */; };
+		465D88E91C8857D0005E1765 /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E81C8857D0005E1765 /* historyTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		465D88DE1C85B898005E1765 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		465D88E41C882BEB005E1765 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		465D88E61C882CF6005E1765 /* bomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bomTableViewCell.swift; sourceTree = "<group>"; };
+		465D88E81C8857D0005E1765 /* historyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 				460409421C5A4B570045BCFB /* SearchViewController.swift */,
 				460409731C5F52640045BCFB /* BOMViewController.swift */,
 				465D88CD1C7F0DF0005E1765 /* downlaodProgressBar.swift */,
+				465D88E81C8857D0005E1765 /* historyTableViewController.swift */,
 			);
 			name = ViewControler;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				465D88D91C8477B8005E1765 /* statusBarViewController.swift in Sources */,
 				460409851C6495E30045BCFB /* CSwiftV.swift in Sources */,
 				465D88E51C882BEB005E1765 /* README.md in Sources */,
+				465D88E91C8857D0005E1765 /* historyTableViewController.swift in Sources */,
 				465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */,
 				465D88E71C882CF6005E1765 /* bomTableViewCell.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,

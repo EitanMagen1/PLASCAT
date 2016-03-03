@@ -33,11 +33,11 @@ class CSVPNFiles {
     }
     
     func searchInFile ( searchText : String, csv : CSwiftV , charectersToSkip : Int) ->[Data] {
-        
         let charectersNumber = searchText.characters.count
         var dataArray = [Data]()
         if  charectersNumber > charectersToSkip {
-            
+            searchArray.append(searchText)
+
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             for keyedrow in keyedRows {
                 if keyedrow["Item Number"]!.containsString(searchText) ||  keyedrow["ENG Description"]!.containsString(searchText) ||  keyedrow["HEB Description"]!.containsString(searchText) {
