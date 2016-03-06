@@ -36,7 +36,7 @@ class CSVPNFiles {
         let charectersNumber = searchText.characters.count
         var dataArray = [Data]()
         if  charectersNumber > charectersToSkip {
-            searchArray.append(searchText)
+            historyTableViewController().insertNewObject(searchText)
 
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             for keyedrow in keyedRows {

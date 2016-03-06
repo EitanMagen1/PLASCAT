@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478700983.328237"
+            timestampString = "478963250.174456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478700983.328237"
+            timestampString = "478963250.174456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "SearchViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478700983.328237"
+            timestampString = "478963250.174456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/Client.swift"
-            timestampString = "478521190.653766"
+            timestampString = "478992473.746411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "Client"
             landmarkType = "3">
          </BreakpointContent>
@@ -330,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/Client.swift"
-            timestampString = "478522644.792753"
+            timestampString = "478992473.746411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "updatingFilesFromServer(_:completionHandelerForDowloadingFiles:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478699546.935622"
+            timestampString = "478981290.114617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -362,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478699546.935622"
+            timestampString = "478981290.114617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -378,7 +378,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478699546.935622"
+            timestampString = "478981290.114617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -394,7 +394,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478699546.935622"
+            timestampString = "478981290.114617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/downlaodProgressBar.swift"
-            timestampString = "478621681.879725"
+            timestampString = "478993213.975022"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "downloadFiles()"
             landmarkType = "5">
          </BreakpointContent>
@@ -426,7 +426,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478701295.140424"
+            timestampString = "478963250.174456"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PLASCAT/SearchViewController.swift"
+            timestampString = "478963250.174456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -442,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478701348.415201"
+            timestampString = "478963250.174456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -457,14 +473,62 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PLASCAT/SearchViewController.swift"
-            timestampString = "478701449.551647"
+            filePath = "PLASCAT/historyTableViewController.swift"
+            timestampString = "478981290.114617"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PLASCAT/historyTableViewController.swift"
+            timestampString = "478990638.242301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "tableView(_:didSelectRowAtIndexPath:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PLASCAT.historyTableViewController.tableView (PLASCAT.historyTableViewController)(__ObjC.UITableView, didSelectRowAtIndexPath : __ObjC.NSIndexPath) -&gt; ()"
+                  moduleName = "PLASCAT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laptoptech/Documents/IOS%20nanodegree/PLASCAT/PLASCAT/historyTableViewController.swift"
+                  timestampString = "478980570.31604"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "233">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PLASCAT.historyTableViewController.(tableView (PLASCAT.historyTableViewController) -&gt; (__ObjC.UITableView, didSelectRowAtIndexPath : __ObjC.NSIndexPath) -&gt; ()).(closure #1)"
+                  moduleName = "PLASCAT"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/laptoptech/Documents/IOS%20nanodegree/PLASCAT/PLASCAT/historyTableViewController.swift"
+                  timestampString = "478980570.316368"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

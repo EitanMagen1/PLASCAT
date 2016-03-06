@@ -8,13 +8,13 @@
 
 import UIKit
 import Foundation
-
+var SearchFromHistoryTable : Bool = false
+var SearchPreference : String = ""
 let CellReuseId = "SearchCell"
 //open the files get ready for search
 let firstTimeAppUsed = Bool()
 let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 let csvLUL = CSVPNFiles.sheredInstance.openLULFile()
-var searchArray : [String] = []
 
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
@@ -41,8 +41,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         
     }
     
-    var SearchFromHistoryTable : Bool = false
-    var SearchPreference : String = ""
+   
     
     override func viewWillAppear(animated: Bool) {
         if SearchFromHistoryTable {

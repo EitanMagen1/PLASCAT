@@ -44,7 +44,7 @@ class CSVBOMFiles  {
         let charectersNumber = searchText.characters.count
         var dataArray = [Data]()
         if  charectersNumber > charectersToSkip {
-            searchArray.append(searchText)
+            historyTableViewController().insertNewObject(searchText)
             guard let keyedRows = csv.keyedRows else { print("no keyedRows"); return [] }
             var assemblyNumber = ""
             var assemblyNumberOnly = ""

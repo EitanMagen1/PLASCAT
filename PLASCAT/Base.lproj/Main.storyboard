@@ -18,14 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-qP-S8V">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3WC-qP-S8V">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" misplaced="YES" text="" placeholder="Search Catalog By :" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="sGU-Tl-GuM"/>
-                                        </constraints>
+                                    <searchBar contentMode="redraw" text="" placeholder="Search Catalog By :" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-0o-1Ut">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <scopeButtonTitles>
                                             <string>Title</string>
@@ -39,7 +36,7 @@
                                         </connections>
                                     </searchBar>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="okK-kw-mGE">
-                                        <rect key="frame" x="0.0" y="40" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="44" width="600" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUk-CI-rcX">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
@@ -61,8 +58,8 @@
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4K7-Ad-Lmu">
-                                        <rect key="frame" x="0.0" y="70" width="600" height="422"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4K7-Ad-Lmu">
+                                        <rect key="frame" x="0.0" y="74" width="600" height="418"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -83,14 +80,17 @@
                                         </connections>
                                     </tableView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="okK-kw-mGE" firstAttribute="top" secondItem="3WC-qP-S8V" secondAttribute="top" constant="44" id="M3v-2t-30w"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3WC-qP-S8V" secondAttribute="bottom" id="AM2-Tf-vBA"/>
-                            <constraint firstItem="3WC-qP-S8V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jwc-Sh-KQ6"/>
-                            <constraint firstAttribute="trailing" secondItem="3WC-qP-S8V" secondAttribute="trailing" id="XLF-2I-6sL"/>
-                            <constraint firstItem="3WC-qP-S8V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="orF-qS-IXU"/>
+                            <constraint firstItem="3WC-qP-S8V" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="0Mm-Vy-dpD"/>
+                            <constraint firstItem="3WC-qP-S8V" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fH9-et-VK5"/>
+                            <constraint firstAttribute="trailing" secondItem="3WC-qP-S8V" secondAttribute="trailing" id="kAv-XC-HLa"/>
+                            <constraint firstItem="3WC-qP-S8V" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uBi-nr-WXy"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -227,6 +227,18 @@
                                     </button>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndH-QI-UZp">
                                         <rect key="frame" x="0.0" y="180" width="600" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="I0e-qd-0Ma"/>
+                                            <constraint firstAttribute="height" constant="2" id="rid-Af-UHG"/>
+                                            <constraint firstAttribute="height" constant="2" id="uc7-JZ-acb"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="I0e-qd-0Ma"/>
+                                                <exclude reference="rid-Af-UHG"/>
+                                                <exclude reference="uc7-JZ-acb"/>
+                                            </mask>
+                                        </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="180" width="400" height="70"/>
                                         </variation>
@@ -332,7 +344,6 @@
                     <navigationItem key="navigationItem" title="Searched History" id="Nq4-Gs-Odx"/>
                     <connections>
                         <outlet property="tableView" destination="12Y-mm-SqY" id="f26-m4-WEO"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToSearch" id="wWm-38-RgS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhe-xf-KQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,7 +374,4 @@
         <image name="play1" width="354" height="353"/>
         <image name="stop1" width="354" height="352"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Tuh-I9-AQE"/>
-    </inferredMetricsTieBreakers>
 </document>

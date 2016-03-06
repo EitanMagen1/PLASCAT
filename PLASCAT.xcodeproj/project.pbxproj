@@ -27,6 +27,8 @@
 		465D88E51C882BEB005E1765 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E41C882BEB005E1765 /* README.md */; };
 		465D88E71C882CF6005E1765 /* bomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E61C882CF6005E1765 /* bomTableViewCell.swift */; };
 		465D88E91C8857D0005E1765 /* historyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88E81C8857D0005E1765 /* historyTableViewController.swift */; };
+		465D88EC1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 465D88EA1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodeld */; };
+		465D88EE1C8C567D005E1765 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465D88ED1C8C567D005E1765 /* Search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		465D88E41C882BEB005E1765 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		465D88E61C882CF6005E1765 /* bomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bomTableViewCell.swift; sourceTree = "<group>"; };
 		465D88E81C8857D0005E1765 /* historyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = historyTableViewController.swift; sourceTree = "<group>"; };
+		465D88EB1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataMasterDetail.xcdatamodel; sourceTree = "<group>"; };
+		465D88ED1C8C567D005E1765 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 				460409441C5A4B570045BCFB /* Main.storyboard */,
 				465D88DE1C85B898005E1765 /* Assets.xcassets */,
 				460409491C5A4B570045BCFB /* LaunchScreen.storyboard */,
+				465D88EA1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodeld */,
 				4604097E1C6393D00045BCFB /* CSV */,
 				460409721C5E358B0045BCFB /* Supporting Files */,
 			);
@@ -197,6 +202,7 @@
 		465D88CF1C82F698005E1765 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				465D88ED1C8C567D005E1765 /* Search.swift */,
 				465D88D01C82F6CE005E1765 /* Client.swift */,
 				465D88D21C82F7A3005E1765 /* Constants.swift */,
 				465D88E61C882CF6005E1765 /* bomTableViewCell.swift */,
@@ -346,9 +352,11 @@
 				460409801C6394360045BCFB /* CSVPNFiles.swift in Sources */,
 				460409741C5F52640045BCFB /* BOMViewController.swift in Sources */,
 				465D88D91C8477B8005E1765 /* statusBarViewController.swift in Sources */,
+				465D88EE1C8C567D005E1765 /* Search.swift in Sources */,
 				460409851C6495E30045BCFB /* CSwiftV.swift in Sources */,
 				465D88E51C882BEB005E1765 /* README.md in Sources */,
 				465D88E91C8857D0005E1765 /* historyTableViewController.swift in Sources */,
+				465D88EC1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodeld in Sources */,
 				465D88CC1C7C4CE1005E1765 /* error handeling.swift in Sources */,
 				465D88E71C882CF6005E1765 /* bomTableViewCell.swift in Sources */,
 				460409761C5FA0870045BCFB /* Data.swift in Sources */,
@@ -598,6 +606,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		465D88EA1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				465D88EB1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodel */,
+			);
+			currentVersion = 465D88EB1C8C5608005E1765 /* CoreDataMasterDetail.xcdatamodel */;
+			path = CoreDataMasterDetail.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 460409351C5A4B570045BCFB /* Project object */;
 }

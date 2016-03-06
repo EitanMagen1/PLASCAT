@@ -8,9 +8,18 @@
 
 import Foundation
 
+// protocol that lets the delegate know the user wants to refresh the data
+protocol DownloadViewDelegate: class {
+    func downlaodViewDidchange(downloadView: Client)
+}
+
 class Client {
     
     // MARK: Properties
+    weak var delegate:DownloadViewDelegate?
+
+    
+    
     
     /* Shared session */
     var session: NSURLSession
@@ -19,11 +28,11 @@ class Client {
     
     init() {
         session = NSURLSession.sharedSession()
+        
     }
 
 
     func updatingFilesFromServer(fileTypeToDowload : String , completionHandelerForDowloadingFiles : (result : NSData!, error :NSError?)-> Void) -> NSURLSessionDataTask{
-        
         var components = NSURLComponents()
         //var dataRecived = NSData()
         
@@ -34,8 +43,9 @@ class Client {
         }
         let request = NSMutableURLRequest(URL: (components.URL)!)
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
-            
             /* GUARD: Was there an error? */
+            self.delegate?.downlaodViewDidchange(self)
+
             guard (error == nil) else {
                 print("There was an error with your request: \(error)")
                 completionHandelerForDowloadingFiles(result: nil, error: error )
@@ -57,7 +67,6 @@ class Client {
                 }
                 return
             }
-            
             /* GUARD: Was there any data returned? */
             guard let data = data else {
                 print("No data was returned by the request!")
@@ -67,6 +76,7 @@ class Client {
             print("downlaoded the data succefuly ")
             completionHandelerForDowloadingFiles(result: data, error: nil)
         }
+        
         task.resume()
         return task //dataRecived
     }
