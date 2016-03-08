@@ -12,26 +12,26 @@ var SearchFromHistoryTable : Bool = false
 var SearchPreference : String = ""
 let CellReuseId = "SearchCell"
 //open the files get ready for search
-let firstTimeAppUsed = Bool()
 let csvBOM = CSVBOMFiles.sheredInstance.openBOMFile()
 let csvLUL = CSVPNFiles.sheredInstance.openLULFile()
 
 
 class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
-
-    static let sheredInstance = SearchViewController()
+    
+    let dataExists : Bool =  NSUserDefaults.standardUserDefaults().boolForKey("DataExists")
     override func viewDidLoad() {
         super.viewDidLoad()
-        //checks if data exists if so work with it , else download
-        if NSUserDefaults.standardUserDefaults().boolForKey("DataExists") {
-
-        //calling the files to be loaded to memory  for faster search later
-        print(csvBOM.columnCount)
-        print(csvLUL.columnCount)
-        }else {
-            downlaodProgressBar().downloadFiles()
+        //if data does NOT exists download files
+        if !dataExists {
+            // Download files
+            Client().downloadFiles()
+            downlaodProgressBar().updateDonloadTimeStamp()
+        }else{  
+            //calling the files to be loaded to memory  for faster search later
+            print(csvBOM.columnCount)
+            print(csvLUL.columnCount)
         }
-       
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,7 +41,7 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         
     }
     
-   
+    
     
     override func viewWillAppear(animated: Bool) {
         if SearchFromHistoryTable {
@@ -202,8 +202,8 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
     }
     
     // MARK: - Drop Down Menu
-
-
+    
+    
     
 }
 

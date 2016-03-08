@@ -80,7 +80,44 @@ class Client {
         task.resume()
         return task //dataRecived
     }
-    
+    func downloadFiles(){
+        var resultLUL = Bool()
+        var resultBOM = Bool()
+        Client().updatingFilesFromServer("BaseURLForLULFile"){ ( FileForLUL , error ) in
+            if let error = error {
+                print( "error Downloading LUL Files \(error)")
+                return
+            }
+            // save the file to the document directory,
+            let URL = FindDucumentInDirectory("PLS_LUL.csv")
+            print( " We finished downloading the file LUL")
+            
+            resultLUL = FileForLUL.writeToFile(URL.path!, atomically: true)
+            // save the BOM file name
+            NSUserDefaults.standardUserDefaults().setValue("PLS_LUL.csv", forKey: "LULFileName")
+            // If the download was succesfull 
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "DataExists")
+
+        }
+        
+        
+        Client().updatingFilesFromServer("BaseURLForBOMFile"){ ( FileForBOM , error ) in
+            if let error = error {
+                print("error Downloading BOM Files \(error)")
+                return
+            }
+            // i want to save the file to the document directory
+            let URL = FindDucumentInDirectory("PLS_LUL_BOM.csv")
+            
+            
+            resultBOM = FileForBOM.writeToFile(URL.path!, atomically: true)
+            // save the BOM file name
+            NSUserDefaults.standardUserDefaults().setValue("PLS_LUL_BOM.csv", forKey: "BOMFileName")
+            
+        }
+        
+    }
+
     
        
 }

@@ -21,13 +21,14 @@ Part Number is 2310929  : expected results are avaliable at the following link
 [User Images]
 # How To use:
 In the landing screen the User will choose between Catalog Number and BOM , which are the two files , the first will look in the parts catalog for data on relevant part the second will search for assemblies where the part or description entered appear.
+> Choose the History button to view and use persisted search items
 
 ### Version
 0.9 is the initial release version
 
 ### Tech
 
-Plascat is  uses an open source project to work properly:
+Plascat uses an open source project to work properly:
 
 * [CSwiftV.swift File by Daniel Haight] - Library to traslate CSV files to dictionary.
 
