@@ -207,92 +207,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mgb-AX-gbW">
-                                <rect key="frame" x="0.0" y="64" width="600" height="430"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Download Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3N-Tl-xaF">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="70"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kv-ge-wKY">
-                                        <rect key="frame" x="0.0" y="90" width="600" height="70"/>
-                                        <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                        <state key="normal" title="Start downloading files"/>
-                                        <connections>
-                                            <action selector="updateButton:" destination="jiG-BA-hgE" eventType="touchUpInside" id="FXj-nl-4co"/>
-                                        </connections>
-                                    </button>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndH-QI-UZp">
-                                        <rect key="frame" x="0.0" y="180" width="600" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="2" id="I0e-qd-0Ma"/>
-                                            <constraint firstAttribute="height" constant="2" id="rid-Af-UHG"/>
-                                            <constraint firstAttribute="height" constant="2" id="uc7-JZ-acb"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="I0e-qd-0Ma"/>
-                                                <exclude reference="rid-Af-UHG"/>
-                                                <exclude reference="uc7-JZ-acb"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="180" width="400" height="70"/>
-                                        </variation>
-                                    </progressView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download new files" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5L-be-MfF">
-                                        <rect key="frame" x="0.0" y="270" width="600" height="70"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gHd-b4-ZDe">
-                                        <rect key="frame" x="0.0" y="360" width="600" height="70"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fB-9O-XDa">
-                                                <rect key="frame" x="0.0" y="0.0" width="290" height="70"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEb-F9-u0f">
-                                                <rect key="frame" x="300" y="0.0" width="0.0" height="70"/>
-                                                <state key="normal" title="Button" image="pause1"/>
-                                            </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz5-n8-kvH">
-                                                <rect key="frame" x="300" y="0.0" width="0.0" height="70"/>
-                                                <state key="normal" title="Button" image="play1"/>
-                                            </button>
-                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-kV-Vtj">
-                                                <rect key="frame" x="300" y="0.0" width="0.0" height="70"/>
-                                                <state key="normal" title="Button" image="stop1"/>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Wb-AX-AG7">
-                                                <rect key="frame" x="310" y="0.0" width="290" height="70"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="OSP-UM-9hJ"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Download Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3N-Tl-xaF">
+                                <rect key="frame" x="0.0" y="64" width="600" height="140"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kv-ge-wKY">
+                                <rect key="frame" x="0.0" y="212" width="600" height="79"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" id="ovg-2Z-zVa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="Start downloading files"/>
+                                <connections>
+                                    <action selector="updateButton:" destination="jiG-BA-hgE" eventType="touchUpInside" id="FXj-nl-4co"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ndH-QI-UZp">
+                                <rect key="frame" x="0.0" y="299" width="600" height="2"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="180" width="400" height="70"/>
+                                </variation>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download new files" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G5L-be-MfF">
+                                <rect key="frame" x="0.0" y="309" width="600" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Mgb-AX-gbW" firstAttribute="top" secondItem="1RS-4g-9In" secondAttribute="bottom" id="NUt-lj-08i"/>
-                            <constraint firstAttribute="trailing" secondItem="Mgb-AX-gbW" secondAttribute="trailing" id="Oju-bh-8GV"/>
-                            <constraint firstItem="Mgb-AX-gbW" firstAttribute="leading" secondItem="e86-Xe-Qrl" secondAttribute="leading" id="ZcY-bq-X25"/>
+                            <constraint firstAttribute="trailing" secondItem="G5L-be-MfF" secondAttribute="trailing" id="549-i1-rVq"/>
+                            <constraint firstItem="5kv-ge-wKY" firstAttribute="trailing" secondItem="ndH-QI-UZp" secondAttribute="trailing" id="8nE-fq-nca"/>
+                            <constraint firstItem="ndH-QI-UZp" firstAttribute="leading" secondItem="G5L-be-MfF" secondAttribute="leading" id="ClO-IS-rLn"/>
+                            <constraint firstItem="1Oj-VT-Vzu" firstAttribute="top" secondItem="G5L-be-MfF" secondAttribute="bottom" constant="167" id="Dh3-Cq-CeI"/>
+                            <constraint firstItem="A3N-Tl-xaF" firstAttribute="top" secondItem="1RS-4g-9In" secondAttribute="bottom" id="PDw-x2-ddN"/>
+                            <constraint firstItem="ndH-QI-UZp" firstAttribute="leading" secondItem="5kv-ge-wKY" secondAttribute="leading" id="S4S-67-HYc"/>
+                            <constraint firstItem="G5L-be-MfF" firstAttribute="trailing" secondItem="ndH-QI-UZp" secondAttribute="trailing" id="V9K-vt-JjJ"/>
+                            <constraint firstItem="A3N-Tl-xaF" firstAttribute="leading" secondItem="e86-Xe-Qrl" secondAttribute="leading" id="YkU-CZ-JIP"/>
+                            <constraint firstItem="5kv-ge-wKY" firstAttribute="top" secondItem="A3N-Tl-xaF" secondAttribute="bottom" constant="8" symbolic="YES" id="cdr-0E-kLX"/>
+                            <constraint firstItem="A3N-Tl-xaF" firstAttribute="leading" secondItem="5kv-ge-wKY" secondAttribute="leading" id="czJ-J8-ABv"/>
+                            <constraint firstItem="5kv-ge-wKY" firstAttribute="trailing" secondItem="A3N-Tl-xaF" secondAttribute="trailing" id="fsb-8C-Iqz"/>
+                            <constraint firstItem="ndH-QI-UZp" firstAttribute="top" secondItem="5kv-ge-wKY" secondAttribute="bottom" constant="8" symbolic="YES" id="js2-tT-Ump"/>
+                            <constraint firstItem="ndH-QI-UZp" firstAttribute="centerY" secondItem="e86-Xe-Qrl" secondAttribute="centerY" id="nCJ-nh-KFs"/>
+                            <constraint firstItem="G5L-be-MfF" firstAttribute="top" secondItem="ndH-QI-UZp" secondAttribute="bottom" constant="8" symbolic="YES" id="qsc-Ob-EF6"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
                     <connections>
+                        <outlet property="downloadButton" destination="5kv-ge-wKY" id="gVA-UN-MU2"/>
                         <outlet property="downloadLabel" destination="A3N-Tl-xaF" id="Ere-r5-4wl"/>
                         <outlet property="progressBar" destination="ndH-QI-UZp" id="qgR-5N-fTi"/>
                         <outlet property="updatedDateLabel" destination="G5L-be-MfF" id="bke-UT-MKb"/>
@@ -314,7 +280,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="12Y-mm-SqY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="12Y-mm-SqY">
                                 <rect key="frame" x="20" y="20" width="560" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -335,10 +301,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VxW-of-PHi" firstAttribute="top" secondItem="12Y-mm-SqY" secondAttribute="bottom" id="EbO-d0-R5E"/>
-                            <constraint firstItem="12Y-mm-SqY" firstAttribute="top" secondItem="F2J-gv-v64" secondAttribute="bottom" id="Gf9-EA-L4Y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="12Y-mm-SqY" secondAttribute="trailing" id="Lmy-V8-Gy6"/>
-                            <constraint firstItem="12Y-mm-SqY" firstAttribute="leading" secondItem="Zn8-h8-zAO" secondAttribute="leadingMargin" id="QOR-hP-s6F"/>
+                            <constraint firstItem="12Y-mm-SqY" firstAttribute="top" secondItem="Zn8-h8-zAO" secondAttribute="top" constant="20" symbolic="YES" id="2Z6-wE-vzU"/>
+                            <constraint firstItem="12Y-mm-SqY" firstAttribute="leading" secondItem="Zn8-h8-zAO" secondAttribute="leadingMargin" id="LjQ-GR-1C6"/>
+                            <constraint firstItem="12Y-mm-SqY" firstAttribute="trailing" secondItem="Zn8-h8-zAO" secondAttribute="trailingMargin" id="UG3-wX-d8J"/>
+                            <constraint firstItem="12Y-mm-SqY" firstAttribute="bottom" secondItem="VxW-of-PHi" secondAttribute="top" id="zh4-l2-cWi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Searched History" id="Nq4-Gs-Odx"/>
@@ -369,9 +335,4 @@
             <point key="canvasLocation" x="-50" y="189"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="pause1" width="352" height="353"/>
-        <image name="play1" width="354" height="353"/>
-        <image name="stop1" width="354" height="352"/>
-    </resources>
 </document>

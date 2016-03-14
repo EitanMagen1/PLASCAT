@@ -24,9 +24,20 @@ class SearchViewController: UIViewController ,UITableViewDelegate, UITableViewDa
         //if data does NOT exists download files
         if !dataExists {
             // Download files
-            Client().downloadFiles()
+            downlaodProgressBar().downloadFiles(completionHandler: { (ResultLUL, ResultBOM) -> Void in
+                if ResultLUL && ResultBOM {
+                // If the download was succesfull
+                NSUserDefaults.standardUserDefaults().setBool(true, forKey: "DataExists")
+                    print("saved the data")
+                    downlaodProgressBar().updateDonloadTimeStamp()
+                    print(csvBOM.columnCount)
+                    print(csvLUL.columnCount)
+
+                }
+            })
+
             downlaodProgressBar().updateDonloadTimeStamp()
-        }else{  
+        }else{
             //calling the files to be loaded to memory  for faster search later
             print(csvBOM.columnCount)
             print(csvLUL.columnCount)

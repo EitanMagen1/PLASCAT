@@ -17,9 +17,6 @@ class Client {
     
     // MARK: Properties
     weak var delegate:DownloadViewDelegate?
-
-    
-    
     
     /* Shared session */
     var session: NSURLSession
@@ -30,26 +27,27 @@ class Client {
         session = NSURLSession.sharedSession()
         
     }
+    
+    func updatingFilesFromServer(fileTypeToDowload : String , completionHandler DowloadingFiles : (result : NSData!, error :NSError?)-> Void) -> NSURLSessionDataTask{
+        
 
-
-    func updatingFilesFromServer(fileTypeToDowload : String , completionHandelerForDowloadingFiles : (result : NSData!, error :NSError?)-> Void) -> NSURLSessionDataTask{
         var components = NSURLComponents()
-        //var dataRecived = NSData()
         
         if fileTypeToDowload == "BaseURLForBOMFile" {
-        components = NSURLComponents(string: downloadConstants.URLConstants.BaseURLForBOMFile)!
+            components = NSURLComponents(string: downloadConstants.URLConstants.BaseURLForBOMFile)!
         } else if fileTypeToDowload == "BaseURLForLULFile" {
-        components = NSURLComponents(string: downloadConstants.URLConstants.BaseURLForLULFile)!
+            components = NSURLComponents(string: downloadConstants.URLConstants.BaseURLForLULFile)!
         }
         let request = NSMutableURLRequest(URL: (components.URL)!)
+        
         let task = session.dataTaskWithRequest(request) { (data, response, error) in
             /* GUARD: Was there an error? */
             self.delegate?.downlaodViewDidchange(self)
-
+            
             guard (error == nil) else {
-                print("There was an error with your request: \(error)")
-                completionHandelerForDowloadingFiles(result: nil, error: error )
-
+                print("There was an error with your request: \(error!)")
+                DowloadingFiles(result: nil, error: error )
+                
                 return
             }
             
@@ -59,8 +57,8 @@ class Client {
                     print("Your request returned an invalid response! Status code: \(response.statusCode)!")
                 } else if let response = response {
                     print("Your request returned an invalid response! Response: \(response)!")
-                    completionHandelerForDowloadingFiles(result: nil, error: response as? NSError )
-
+                    DowloadingFiles(result: nil, error: response as? NSError )
+                    
                     
                 } else {
                     print("Your request returned an invalid response!")
@@ -74,50 +72,15 @@ class Client {
             }
             //dataRecived = data
             print("downlaoded the data succefuly ")
-            completionHandelerForDowloadingFiles(result: data, error: nil)
+            DowloadingFiles(result: data, error: nil)
         }
         
         task.resume()
-        return task //dataRecived
+        
+        return task
+            
     }
-    func downloadFiles(){
-        var resultLUL = Bool()
-        var resultBOM = Bool()
-        Client().updatingFilesFromServer("BaseURLForLULFile"){ ( FileForLUL , error ) in
-            if let error = error {
-                print( "error Downloading LUL Files \(error)")
-                return
-            }
-            // save the file to the document directory,
-            let URL = FindDucumentInDirectory("PLS_LUL.csv")
-            print( " We finished downloading the file LUL")
-            
-            resultLUL = FileForLUL.writeToFile(URL.path!, atomically: true)
-            // save the BOM file name
-            NSUserDefaults.standardUserDefaults().setValue("PLS_LUL.csv", forKey: "LULFileName")
-            // If the download was succesfull 
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "DataExists")
-
-        }
-        
-        
-        Client().updatingFilesFromServer("BaseURLForBOMFile"){ ( FileForBOM , error ) in
-            if let error = error {
-                print("error Downloading BOM Files \(error)")
-                return
-            }
-            // i want to save the file to the document directory
-            let URL = FindDucumentInDirectory("PLS_LUL_BOM.csv")
-            
-            
-            resultBOM = FileForBOM.writeToFile(URL.path!, atomically: true)
-            // save the BOM file name
-            NSUserDefaults.standardUserDefaults().setValue("PLS_LUL_BOM.csv", forKey: "BOMFileName")
-            
-        }
-        
-    }
-
     
-       
+  
+    
 }

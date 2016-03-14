@@ -11,7 +11,6 @@ import UIKit
 
 class downlaodProgressBar: UIViewController , NSURLSessionDownloadDelegate  {
     
-    
     // property to keep track of the persentage wise we pulled down
     var progressPercentage: Float64 = 0
     weak var delegate: DownloadViewDelegate?
@@ -22,12 +21,11 @@ class downlaodProgressBar: UIViewController , NSURLSessionDownloadDelegate  {
     var Session: NSURLSession!
     let formatter = NSDateFormatter()
     
-    
-    
-    
     @IBOutlet weak var downloadLabel: UILabel!
     @IBOutlet weak var updatedDateLabel: UILabel!
     @IBOutlet weak var progressBar: UIProgressView!
+    
+    @IBOutlet weak var downloadButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +42,81 @@ class downlaodProgressBar: UIViewController , NSURLSessionDownloadDelegate  {
         downloadLabel.text = "Downloading Files 0/2"
         progressBar.setProgress(0, animated: true)
         
-        Client().downloadFiles()
-        updateDonloadTimeStamp()
-        updateProgressBar()
+        downloadFiles { (ResultLUL, ResultBOM) -> Void in
+            if ResultLUL && ResultBOM {
+                self.updateDonloadTimeStamp()
+                self.updateLabel()
+            }
+        }
+    }
+    func updateLabel (){
+        dispatch_async(dispatch_get_main_queue(),{
+            self.updatedDateLabel.text = NSUserDefaults.standardUserDefaults().stringForKey("updatedDateLabel.text")
+            self.downloadButton.setTitle("Finished Downloading Files", forState: .Normal)
+        })
+    }
+    func downloadFiles(completionHandler ResultHandler : (ResultLUL :Bool ,ResultBOM : Bool )->Void){
+        var resultLUL = Bool()
+        var resultBOM = Bool()
+        Client().updatingFilesFromServer("BaseURLForLULFile"){ ( FileForLUL , error ) in
+            if let error = error {
+                UIViewController().presentError(error.debugDescription)
+                return
+            }
+            // save the file to the document directory,
+            let URL = FindDucumentInDirectory("PLS_LUL.csv")
+            print( " We finished downloading the file LUL")
+            if SearchViewController().dataExists {
+            dispatch_async(dispatch_get_main_queue(),{
+                
+                self.progressBar.setProgress(0.3, animated: true)
+                self.downloadLabel.text = "Downloaded LUL file 1/2"
+            })
+            }
+            resultLUL = FileForLUL.writeToFile(URL.path!, atomically: true)
+            // save the BOM file name
+            NSUserDefaults.standardUserDefaults().setValue("PLS_LUL.csv", forKey: "LULFileName")
+            
+        }
+        
+        
+        Client().updatingFilesFromServer("BaseURLForBOMFile"){ ( FileForBOM , error ) in
+            if let error = error {
+                UIViewController().presentError(error.debugDescription)
+                return
+            }
+            if SearchViewController().dataExists {
+
+            dispatch_async(dispatch_get_main_queue(),{
+                
+                self.progressBar.setProgress(1, animated: true)
+                self.downloadLabel.text = "Downloaded BOM file 2/2"
+            })
+            }
+            // i want to save the file to the document directory
+            let URL = FindDucumentInDirectory("PLS_LUL_BOM.csv")
+            
+            
+            resultBOM = FileForBOM.writeToFile(URL.path!, atomically: true)
+            // save the BOM file name
+            NSUserDefaults.standardUserDefaults().setValue("PLS_LUL_BOM.csv", forKey: "BOMFileName")
+            ResultHandler(ResultLUL: resultLUL , ResultBOM: resultBOM)
+
+        }
+        return
     }
     
+    
+    
+    
     //MARK  - save download date
-
+    
     func updateDonloadTimeStamp(){
         let date = NSDate()
         let dateString = formatter.stringFromDate(date)
         let textForLabel = "Last Updated " + dateString
         NSUserDefaults.standardUserDefaults().setObject(textForLabel, forKey: "updatedDateLabel.text")
+        
         
     }
     
@@ -83,13 +144,6 @@ class downlaodProgressBar: UIViewController , NSURLSessionDownloadDelegate  {
         
     }
     
-    func updateProgressBar(){
-        progressBar.setProgress(0.3, animated: true)
-        downloadLabel.text = "Downloaded LUL file 1/2"
-        progressBar.setProgress(1.0, animated: true)
-        downloadLabel.text = "Downloaded files successfully 2/2"
-        
-    }
     
 }
 
